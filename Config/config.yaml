@@ -1,0 +1,14 @@
+conf:
+  base_url : "http://192.168.101.89:18081"
+  target : "人行生产中心云定制项目"
+  description : "Git版本：,日期： ，版本描述："
+  suite : "TestCase1"
+  excel : "Pbank-portal.xlsx"
+
+mysql :
+  host : '192.168.101.89'
+  port : 13307
+  username : 'root'
+  password : 'h3croot'
+  db_name : 'pbank-portal'
+  charset : 'utf-8'

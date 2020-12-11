@@ -1,0 +1,28 @@
+===2020-12-11 09:20:02,926 ERROR D:\maizi\TestCase\test_cases.py --> 500 != 200
+===2020-12-11 09:20:03,148 ERROR D:\maizi\TestCase\test_cases.py --> 500 != 200
+===2020-12-11 11:05:40,756 ERROR D:\maizi\TestCase\test_cases.py --> 500 != 200
+===2020-12-11 11:05:41,019 ERROR D:\maizi\TestCase\test_cases.py --> 500 != 200
+===2020-12-11 11:07:00,566 ERROR D:\maizi\TestCase\test_cases.py --> 500 != 200
+===2020-12-11 11:07:00,788 ERROR D:\maizi\TestCase\test_cases.py --> 500 != 200
+===2020-12-11 11:12:04,111 ERROR D:\maizi\TestCase\test_cases.py --> 500 != 200
+===2020-12-11 11:12:04,359 ERROR D:\maizi\TestCase\test_cases.py --> 500 != 200
+===2020-12-11 11:14:39,140 ERROR D:\maizi\TestCase\test_cases.py --> 500 != 200
+===2020-12-11 11:14:39,503 ERROR D:\maizi\TestCase\test_cases.py --> 500 != 200
+===2020-12-11 11:16:16,625 ERROR D:\maizi\TestCase\test_cases.py --> 500 != 200
+===2020-12-11 11:16:29,527 ERROR D:\maizi\TestCase\test_cases.py -->  :: 500 != 200
+===2020-12-11 11:18:33,684 ERROR D:\maizi\TestCase\test_cases.py -->  :: 500 != 200
+===2020-12-11 11:18:33,931 ERROR D:\maizi\TestCase\test_cases.py -->  :: 500 != 200
+===2020-12-11 11:24:39,980 ERROR D:\maizi\TestCase\test_cases.py -->  :: 500 != 200
+===2020-12-11 11:25:44,654 ERROR D:\maizi\TestCase\test_cases.py --> 500 != 200
+===2020-12-11 11:27:38,229 ERROR D:\maizi\TestCase\test_cases.py --> 500 != 200
+===2020-12-11 11:31:04,401 ERROR D:\maizi\TestCase\test_cases.py --> 500 != 200
+===2020-12-11 11:38:26,633 ERROR D:\maizi\TestCase\test_cases.py --> 500 != 200
+===2020-12-11 11:41:56,623 ERROR D:\maizi\TestCase\test_cases.py --> 500 != 200
+===2020-12-11 11:42:47,783 ERROR D:\maizi\TestCase\test_cases.py --> 500 != 200
+===2020-12-11 11:46:25,648 ERROR D:\maizi\TestCase\test_cases.py --> 500 != 200
+===2020-12-11 11:47:36,782 ERROR D:\maizi\TestCase\test_cases.py --> 500 != 200
+===2020-12-11 11:48:02,267 ERROR D:\maizi\TestCase\test_cases.py --> 500 != 200
+===2020-12-11 11:49:22,908 ERROR D:\maizi\TestCase\test_cases.py --> 500 != 200
+===2020-12-11 11:55:27,176 ERROR D:\maizi\TestCase\test_cases.py --> 500 != 200
+===2020-12-11 17:06:22,162 ERROR D:\maizi\TestCase\test_cases.py --> '"status":truess' not found in '{"status":true,"message":"申请X86硬盘！","data":null,"code":200,"attributes":null}'
+===2020-12-11 17:22:59,743 ERROR D:\maizi\TestCase\test_cases.py --> '"status":truess' not found in '{"status":true,"message":"申请X86硬盘！","data":null,"code":200,"attributes":null}'

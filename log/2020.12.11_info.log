@@ -1,0 +1,972 @@
+===2020-12-11 09:20:02,879 INFO D:\maizi\TestCase\test_cases.py --> 
+用例名称：TC_001:申请云硬盘
+测试步骤：Login
+请求URL：POST:http://192.168.101.89:18081/login/login
+请求头：{'Content-Length': '41', 'Content-Type': 'application/x-www-form-urlencoded'}
+返回状态码：200
+响应头：{'Access-Control-Allow-Origin': '', 'Access-Control-Allow-Headers': 'accept,content-type', 'Access-Control-Allow-Methods': 'OPTIONS,GET,POST,DELETE,PUT', 'Access-Control-Allow-Credentials': 'true', 'Set-Cookie': 'JSESSIONID=3F3333FA58F0C0019B1178B829C4ED43; Path=/; HttpOnly', 'Content-Type': 'application/json;charset=UTF-8', 'Transfer-Encoding': 'chunked', 'Date': 'Sat, 12 Dec 2020 01:04:51 GMT'}
+响应体：{'status': True, 'message': None, 'data': {'id': '1df71957d770436493a84f24d9344853', 'groupId': '9052ae85792143ff955c35c52e8e41bd', 'groupName': '中国人民银行清算总中心', 'roleId': 'baae5505-cc96-4cf1-ad5a-a87285af90ae', 'roleName': '云管理员', 'platFormRoleId': 'baae5505-cc96-4cf1-ad5a-a87285af90ae', 'roleLevel': 0, 'roleLevelName': None, 'platformUserId': '1df71957d770436493a84f24d9344853', 'loginName': 'admin', 'userName': '系统管理员', 'password': None, 'pwdInvalidTime': '2020-11-06 10:28:00', 'description': '', 'owner': 'cloudos', 'certification': '', 'email': '', 'telephone': '', 'address': '', 'ipCheck': None, 'macCheck': None, 'otherInfo': '9052ae85792143ff955c35c52e8e41bd,66213f235cb046d091b67976f4726677', 'createDate': '2018-10-18 09:49:25', 'modifiedDate': '2019-11-14 19:02:18', 'logindatetime': '2020-12-12 09:04:51', 'ip': '172.17.72.1', 'digestPassword': '', 'active': True, 'locked': False}, 'code': 200, 'attributes': None}
+
+===2020-12-11 09:20:02,926 INFO D:\maizi\TestCase\test_cases.py --> 
+用例名称：TC_001:申请云硬盘
+测试步骤：云硬盘
+请求URL：POST:http://192.168.101.89:18081/serverApply/volume
+请求头：{'Cookie': 'JSESSIONID=3F3333FA58F0C0019B1178B829C4ED43', 'Content-Length': '567', 'Content-Type': 'application/json'}
+返回状态码：200
+响应头：{'Access-Control-Allow-Origin': '', 'Access-Control-Allow-Headers': 'accept,content-type', 'Access-Control-Allow-Methods': 'OPTIONS,GET,POST,DELETE,PUT', 'Access-Control-Allow-Credentials': 'true', 'Content-Type': 'application/json;charset=UTF-8', 'Transfer-Encoding': 'chunked', 'Date': 'Sat, 12 Dec 2020 01:04:51 GMT'}
+响应体：{'status': False, 'message': '资源名称[人行生产中心云定制项目]已经存在!', 'data': None, 'code': 500, 'attributes': None}
+
+===2020-12-11 09:20:02,970 INFO D:\maizi\TestCase\test_cases.py --> 
+用例名称：TC_001:申请云硬盘
+测试步骤：获取云硬盘资源清单
+请求URL：GET:http://192.168.101.89:18081/applylist/listApplyListsByOperatorId
+请求头：{'Cookie': 'JSESSIONID=3F3333FA58F0C0019B1178B829C4ED43'}
+返回状态码：200
+响应头：{'Access-Control-Allow-Origin': '', 'Access-Control-Allow-Headers': 'accept,content-type', 'Access-Control-Allow-Methods': 'OPTIONS,GET,POST,DELETE,PUT', 'Access-Control-Allow-Credentials': 'true', 'Content-Type': 'application/json;charset=UTF-8', 'Transfer-Encoding': 'chunked', 'Date': 'Sat, 12 Dec 2020 01:04:51 GMT'}
+响应体：{'status': True, 'message': None, 'data': {'server': {'add': [], 'change': [], 'unsubscribe': []}, 'volume': {'add': [], 'change': [], 'unsubscribe': []}, 'port': {'add': [], 'change': [], 'unsubscribe': []}, 'baremetal': {'add': [], 'change': [], 'unsubscribe': []}, 'powervm': {'add': [], 'change': [], 'unsubscribe': []}, 'powervolume': {'add': [], 'change': [], 'unsubscribe': []}, 'ecs': {'add': [], 'change': [], 'unsubscribe': []}, 'eip': {'add': [], 'change': [], 'unsubscribe': []}, 'evs': {'add': [], 'change': [], 'unsubscribe': []}}, 'code': 200, 'attributes': None}
+
+===2020-12-11 09:20:02,990 INFO D:\maizi\TestCase\test_cases.py --> 
+用例名称：TC_001:申请云硬盘
+测试步骤：新建maximo工单
+请求URL：POST:http://192.168.101.89:18081/h3c/apply
+请求头：{'Cookie': 'JSESSIONID=3F3333FA58F0C0019B1178B829C4ED43', 'Content-Length': '753', 'Content-Type': 'application/json'}
+返回状态码：200
+响应头：{'Access-Control-Allow-Origin': '', 'Access-Control-Allow-Headers': 'accept,content-type', 'Access-Control-Allow-Methods': 'OPTIONS,GET,POST,DELETE,PUT', 'Access-Control-Allow-Credentials': 'true', 'Content-Type': 'application/json;charset=UTF-8', 'Transfer-Encoding': 'chunked', 'Date': 'Sat, 12 Dec 2020 01:04:51 GMT'}
+响应体：{'status': True, 'message': '发送成功', 'data': None, 'code': 200, 'attributes': None}
+
+===2020-12-11 09:20:03,035 INFO D:\maizi\TestCase\test_cases.py --> 
+用例名称：TC_001:申请云硬盘
+测试步骤：资源预检
+请求URL：POST:http://192.168.101.89:18081/applylist/resourceCheck
+请求头：{'Cookie': 'JSESSIONID=3F3333FA58F0C0019B1178B829C4ED43', 'Content-Length': '8', 'Content-Type': 'application/json'}
+返回状态码：200
+响应头：{'Access-Control-Allow-Origin': '', 'Access-Control-Allow-Headers': 'accept,content-type', 'Access-Control-Allow-Methods': 'OPTIONS,GET,POST,DELETE,PUT', 'Access-Control-Allow-Credentials': 'true', 'Content-Type': 'application/json;charset=UTF-8', 'Transfer-Encoding': 'chunked', 'Date': 'Sat, 12 Dec 2020 01:04:51 GMT'}
+响应体：{'status': True, 'message': '本次提交订单所有资源预检成功', 'data': True, 'code': 200, 'attributes': None}
+
+===2020-12-11 09:20:03,135 INFO D:\maizi\TestCase\test_cases.py --> 
+用例名称：TC_001:申请云硬盘
+测试步骤：提交订单
+请求URL：POST:http://192.168.101.89:18081/applylist/saveOrder/ACTYoIho/True
+请求头：{'Cookie': 'JSESSIONID=3F3333FA58F0C0019B1178B829C4ED43', 'Content-Length': '8', 'Content-Type': 'application/json'}
+返回状态码：200
+响应头：{'Access-Control-Allow-Origin': '', 'Access-Control-Allow-Headers': 'accept,content-type', 'Access-Control-Allow-Methods': 'OPTIONS,GET,POST,DELETE,PUT', 'Access-Control-Allow-Credentials': 'true', 'Content-Type': 'application/json;charset=UTF-8', 'Transfer-Encoding': 'chunked', 'Date': 'Sat, 12 Dec 2020 01:04:51 GMT'}
+响应体：{'status': True, 'message': '成功保存订单', 'data': None, 'code': 200, 'attributes': None}
+
+===2020-12-11 09:20:03,148 INFO D:\maizi\TestCase\test_cases.py --> 
+用例名称：TC_001:申请云硬盘
+测试步骤：审批下发
+请求URL：POST:http://192.168.101.89:18081/h3c/approve
+请求头：{'Cookie': 'JSESSIONID=3F3333FA58F0C0019B1178B829C4ED43', 'Content-Length': '189', 'Content-Type': 'application/json'}
+返回状态码：200
+响应头：{'Access-Control-Allow-Origin': '', 'Access-Control-Allow-Headers': 'accept,content-type', 'Access-Control-Allow-Methods': 'OPTIONS,GET,POST,DELETE,PUT', 'Access-Control-Allow-Credentials': 'true', 'Content-Type': 'application/json;charset=UTF-8', 'Transfer-Encoding': 'chunked', 'Date': 'Sat, 12 Dec 2020 01:04:51 GMT'}
+响应体：{'status': False, 'message': '工单号[ACTYoIho]没有需要下发的资源，数据存在异常', 'data': None, 'code': 500, 'attributes': None}
+
+===2020-12-11 09:20:03,154 INFO D:\maizi\TestCase\test_cases.py --> 
+用例名称：TC_002:申请云2
+测试步骤：Logout
+请求URL：GET:http://192.168.101.89:18081/login/logout
+请求头：{'Cookie': 'JSESSIONID=3F3333FA58F0C0019B1178B829C4ED43'}
+返回状态码：200
+响应头：{'Access-Control-Allow-Origin': '', 'Access-Control-Allow-Headers': 'accept,content-type', 'Access-Control-Allow-Methods': 'OPTIONS,GET,POST,DELETE,PUT', 'Access-Control-Allow-Credentials': 'true', 'Content-Type': 'application/json;charset=UTF-8', 'Transfer-Encoding': 'chunked', 'Date': 'Sat, 12 Dec 2020 01:04:51 GMT'}
+响应体：{'status': True, 'message': 'logout', 'data': None, 'code': 200, 'attributes': None}
+
+===2020-12-11 11:05:40,697 INFO D:\maizi\TestCase\test_cases.py --> 
+用例名称：TC_001:申请云硬盘
+测试步骤：Login
+请求URL：POST:http://192.168.101.89:18081/login/login
+请求头：{'Content-Length': '41', 'Content-Type': 'application/x-www-form-urlencoded'}
+返回状态码：200
+响应头：{'Access-Control-Allow-Origin': '', 'Access-Control-Allow-Headers': 'accept,content-type', 'Access-Control-Allow-Methods': 'OPTIONS,GET,POST,DELETE,PUT', 'Access-Control-Allow-Credentials': 'true', 'Set-Cookie': 'JSESSIONID=F7D6E9C16CDE9F35E1B242E72EDA6AB7; Path=/; HttpOnly', 'Content-Type': 'application/json;charset=UTF-8', 'Transfer-Encoding': 'chunked', 'Date': 'Sat, 12 Dec 2020 02:50:29 GMT'}
+响应体：{'status': True, 'message': None, 'data': {'id': '1df71957d770436493a84f24d9344853', 'groupId': '9052ae85792143ff955c35c52e8e41bd', 'groupName': '中国人民银行清算总中心', 'roleId': 'baae5505-cc96-4cf1-ad5a-a87285af90ae', 'roleName': '云管理员', 'platFormRoleId': 'baae5505-cc96-4cf1-ad5a-a87285af90ae', 'roleLevel': 0, 'roleLevelName': None, 'platformUserId': '1df71957d770436493a84f24d9344853', 'loginName': 'admin', 'userName': '系统管理员', 'password': None, 'pwdInvalidTime': '2020-11-06 10:28:00', 'description': '', 'owner': 'cloudos', 'certification': '', 'email': '', 'telephone': '', 'address': '', 'ipCheck': None, 'macCheck': None, 'otherInfo': '9052ae85792143ff955c35c52e8e41bd,66213f235cb046d091b67976f4726677', 'createDate': '2018-10-18 09:49:25', 'modifiedDate': '2019-11-14 19:02:18', 'logindatetime': '2020-12-12 10:50:29', 'ip': '172.17.72.1', 'digestPassword': '', 'active': True, 'locked': False}, 'code': 200, 'attributes': None}
+
+===2020-12-11 11:05:40,755 INFO D:\maizi\TestCase\test_cases.py --> 
+用例名称：TC_001:申请云硬盘
+测试步骤：云硬盘
+请求URL：POST:http://192.168.101.89:18081/serverApply/volume
+请求头：{'Cookie': 'JSESSIONID=F7D6E9C16CDE9F35E1B242E72EDA6AB7', 'Content-Length': '567', 'Content-Type': 'application/json'}
+返回状态码：200
+响应头：{'Access-Control-Allow-Origin': '', 'Access-Control-Allow-Headers': 'accept,content-type', 'Access-Control-Allow-Methods': 'OPTIONS,GET,POST,DELETE,PUT', 'Access-Control-Allow-Credentials': 'true', 'Content-Type': 'application/json;charset=UTF-8', 'Transfer-Encoding': 'chunked', 'Date': 'Sat, 12 Dec 2020 02:50:29 GMT'}
+响应体：{'status': False, 'message': '资源名称[人行生产中心云定制项目]已经存在!', 'data': None, 'code': 500, 'attributes': None}
+
+===2020-12-11 11:05:40,803 INFO D:\maizi\TestCase\test_cases.py --> 
+用例名称：TC_001:申请云硬盘
+测试步骤：获取云硬盘资源清单
+请求URL：GET:http://192.168.101.89:18081/applylist/listApplyListsByOperatorId
+请求头：{'Cookie': 'JSESSIONID=F7D6E9C16CDE9F35E1B242E72EDA6AB7'}
+返回状态码：200
+响应头：{'Access-Control-Allow-Origin': '', 'Access-Control-Allow-Headers': 'accept,content-type', 'Access-Control-Allow-Methods': 'OPTIONS,GET,POST,DELETE,PUT', 'Access-Control-Allow-Credentials': 'true', 'Content-Type': 'application/json;charset=UTF-8', 'Transfer-Encoding': 'chunked', 'Date': 'Sat, 12 Dec 2020 02:50:29 GMT'}
+响应体：{'status': True, 'message': None, 'data': {'server': {'add': [], 'change': [], 'unsubscribe': []}, 'volume': {'add': [], 'change': [], 'unsubscribe': []}, 'port': {'add': [], 'change': [], 'unsubscribe': []}, 'baremetal': {'add': [], 'change': [], 'unsubscribe': []}, 'powervm': {'add': [], 'change': [], 'unsubscribe': []}, 'powervolume': {'add': [], 'change': [], 'unsubscribe': []}, 'ecs': {'add': [], 'change': [], 'unsubscribe': []}, 'eip': {'add': [], 'change': [], 'unsubscribe': []}, 'evs': {'add': [], 'change': [], 'unsubscribe': []}}, 'code': 200, 'attributes': None}
+
+===2020-12-11 11:05:40,832 INFO D:\maizi\TestCase\test_cases.py --> 
+用例名称：TC_001:申请云硬盘
+测试步骤：新建maximo工单
+请求URL：POST:http://192.168.101.89:18081/h3c/apply
+请求头：{'Cookie': 'JSESSIONID=F7D6E9C16CDE9F35E1B242E72EDA6AB7', 'Content-Length': '753', 'Content-Type': 'application/json'}
+返回状态码：200
+响应头：{'Access-Control-Allow-Origin': '', 'Access-Control-Allow-Headers': 'accept,content-type', 'Access-Control-Allow-Methods': 'OPTIONS,GET,POST,DELETE,PUT', 'Access-Control-Allow-Credentials': 'true', 'Content-Type': 'application/json;charset=UTF-8', 'Transfer-Encoding': 'chunked', 'Date': 'Sat, 12 Dec 2020 02:50:29 GMT'}
+响应体：{'status': True, 'message': '发送成功', 'data': None, 'code': 200, 'attributes': None}
+
+===2020-12-11 11:05:40,880 INFO D:\maizi\TestCase\test_cases.py --> 
+用例名称：TC_001:申请云硬盘
+测试步骤：资源预检
+请求URL：POST:http://192.168.101.89:18081/applylist/resourceCheck
+请求头：{'Cookie': 'JSESSIONID=F7D6E9C16CDE9F35E1B242E72EDA6AB7', 'Content-Length': '8', 'Content-Type': 'application/json'}
+返回状态码：200
+响应头：{'Access-Control-Allow-Origin': '', 'Access-Control-Allow-Headers': 'accept,content-type', 'Access-Control-Allow-Methods': 'OPTIONS,GET,POST,DELETE,PUT', 'Access-Control-Allow-Credentials': 'true', 'Content-Type': 'application/json;charset=UTF-8', 'Transfer-Encoding': 'chunked', 'Date': 'Sat, 12 Dec 2020 02:50:29 GMT'}
+响应体：{'status': True, 'message': '本次提交订单所有资源预检成功', 'data': True, 'code': 200, 'attributes': None}
+
+===2020-12-11 11:05:41,004 INFO D:\maizi\TestCase\test_cases.py --> 
+用例名称：TC_001:申请云硬盘
+测试步骤：提交订单
+请求URL：POST:http://192.168.101.89:18081/applylist/saveOrder/ACTD7Zyk/True
+请求头：{'Cookie': 'JSESSIONID=F7D6E9C16CDE9F35E1B242E72EDA6AB7', 'Content-Length': '8', 'Content-Type': 'application/json'}
+返回状态码：200
+响应头：{'Access-Control-Allow-Origin': '', 'Access-Control-Allow-Headers': 'accept,content-type', 'Access-Control-Allow-Methods': 'OPTIONS,GET,POST,DELETE,PUT', 'Access-Control-Allow-Credentials': 'true', 'Content-Type': 'application/json;charset=UTF-8', 'Transfer-Encoding': 'chunked', 'Date': 'Sat, 12 Dec 2020 02:50:29 GMT'}
+响应体：{'status': True, 'message': '成功保存订单', 'data': None, 'code': 200, 'attributes': None}
+
+===2020-12-11 11:05:41,018 INFO D:\maizi\TestCase\test_cases.py --> 
+用例名称：TC_001:申请云硬盘
+测试步骤：审批下发
+请求URL：POST:http://192.168.101.89:18081/h3c/approve
+请求头：{'Cookie': 'JSESSIONID=F7D6E9C16CDE9F35E1B242E72EDA6AB7', 'Content-Length': '189', 'Content-Type': 'application/json'}
+返回状态码：200
+响应头：{'Access-Control-Allow-Origin': '', 'Access-Control-Allow-Headers': 'accept,content-type', 'Access-Control-Allow-Methods': 'OPTIONS,GET,POST,DELETE,PUT', 'Access-Control-Allow-Credentials': 'true', 'Content-Type': 'application/json;charset=UTF-8', 'Transfer-Encoding': 'chunked', 'Date': 'Sat, 12 Dec 2020 02:50:29 GMT'}
+响应体：{'status': False, 'message': '工单号[ACTD7Zyk]没有需要下发的资源，数据存在异常', 'data': None, 'code': 500, 'attributes': None}
+
+===2020-12-11 11:05:41,025 INFO D:\maizi\TestCase\test_cases.py --> 
+用例名称：TC_002:申请云2
+测试步骤：Logout
+请求URL：GET:http://192.168.101.89:18081/login/logout
+请求头：{'Cookie': 'JSESSIONID=F7D6E9C16CDE9F35E1B242E72EDA6AB7'}
+返回状态码：200
+响应头：{'Access-Control-Allow-Origin': '', 'Access-Control-Allow-Headers': 'accept,content-type', 'Access-Control-Allow-Methods': 'OPTIONS,GET,POST,DELETE,PUT', 'Access-Control-Allow-Credentials': 'true', 'Content-Type': 'application/json;charset=UTF-8', 'Transfer-Encoding': 'chunked', 'Date': 'Sat, 12 Dec 2020 02:50:29 GMT'}
+响应体：{'status': True, 'message': 'logout', 'data': None, 'code': 200, 'attributes': None}
+
+===2020-12-11 11:07:00,507 INFO D:\maizi\TestCase\test_cases.py --> 
+用例名称：TC_001:申请云硬盘
+测试步骤：Login
+请求URL：POST:http://192.168.101.89:18081/login/login
+请求头：{'Content-Length': '41', 'Content-Type': 'application/x-www-form-urlencoded'}
+返回状态码：200
+响应头：{'Access-Control-Allow-Origin': '', 'Access-Control-Allow-Headers': 'accept,content-type', 'Access-Control-Allow-Methods': 'OPTIONS,GET,POST,DELETE,PUT', 'Access-Control-Allow-Credentials': 'true', 'Set-Cookie': 'JSESSIONID=73036BA6D51AE39F3E52275D8E4ABF20; Path=/; HttpOnly', 'Content-Type': 'application/json;charset=UTF-8', 'Transfer-Encoding': 'chunked', 'Date': 'Sat, 12 Dec 2020 02:51:49 GMT'}
+响应体：{'status': True, 'message': None, 'data': {'id': '1df71957d770436493a84f24d9344853', 'groupId': '9052ae85792143ff955c35c52e8e41bd', 'groupName': '中国人民银行清算总中心', 'roleId': 'baae5505-cc96-4cf1-ad5a-a87285af90ae', 'roleName': '云管理员', 'platFormRoleId': 'baae5505-cc96-4cf1-ad5a-a87285af90ae', 'roleLevel': 0, 'roleLevelName': None, 'platformUserId': '1df71957d770436493a84f24d9344853', 'loginName': 'admin', 'userName': '系统管理员', 'password': None, 'pwdInvalidTime': '2020-11-06 10:28:00', 'description': '', 'owner': 'cloudos', 'certification': '', 'email': '', 'telephone': '', 'address': '', 'ipCheck': None, 'macCheck': None, 'otherInfo': '9052ae85792143ff955c35c52e8e41bd,66213f235cb046d091b67976f4726677', 'createDate': '2018-10-18 09:49:25', 'modifiedDate': '2019-11-14 19:02:18', 'logindatetime': '2020-12-12 10:51:49', 'ip': '172.17.72.1', 'digestPassword': '', 'active': True, 'locked': False}, 'code': 200, 'attributes': None}
+
+===2020-12-11 11:07:00,565 INFO D:\maizi\TestCase\test_cases.py --> 
+用例名称：TC_001:申请云硬盘
+测试步骤：云硬盘
+请求URL：POST:http://192.168.101.89:18081/serverApply/volume
+请求头：{'Cookie': 'JSESSIONID=73036BA6D51AE39F3E52275D8E4ABF20', 'Content-Length': '567', 'Content-Type': 'application/json'}
+返回状态码：200
+响应头：{'Access-Control-Allow-Origin': '', 'Access-Control-Allow-Headers': 'accept,content-type', 'Access-Control-Allow-Methods': 'OPTIONS,GET,POST,DELETE,PUT', 'Access-Control-Allow-Credentials': 'true', 'Content-Type': 'application/json;charset=UTF-8', 'Transfer-Encoding': 'chunked', 'Date': 'Sat, 12 Dec 2020 02:51:49 GMT'}
+响应体：{'status': False, 'message': '资源名称[人行生产中心云定制项目]已经存在!', 'data': None, 'code': 500, 'attributes': None}
+
+===2020-12-11 11:07:00,607 INFO D:\maizi\TestCase\test_cases.py --> 
+用例名称：TC_001:申请云硬盘
+测试步骤：获取云硬盘资源清单
+请求URL：GET:http://192.168.101.89:18081/applylist/listApplyListsByOperatorId
+请求头：{'Cookie': 'JSESSIONID=73036BA6D51AE39F3E52275D8E4ABF20'}
+返回状态码：200
+响应头：{'Access-Control-Allow-Origin': '', 'Access-Control-Allow-Headers': 'accept,content-type', 'Access-Control-Allow-Methods': 'OPTIONS,GET,POST,DELETE,PUT', 'Access-Control-Allow-Credentials': 'true', 'Content-Type': 'application/json;charset=UTF-8', 'Transfer-Encoding': 'chunked', 'Date': 'Sat, 12 Dec 2020 02:51:49 GMT'}
+响应体：{'status': True, 'message': None, 'data': {'server': {'add': [], 'change': [], 'unsubscribe': []}, 'volume': {'add': [], 'change': [], 'unsubscribe': []}, 'port': {'add': [], 'change': [], 'unsubscribe': []}, 'baremetal': {'add': [], 'change': [], 'unsubscribe': []}, 'powervm': {'add': [], 'change': [], 'unsubscribe': []}, 'powervolume': {'add': [], 'change': [], 'unsubscribe': []}, 'ecs': {'add': [], 'change': [], 'unsubscribe': []}, 'eip': {'add': [], 'change': [], 'unsubscribe': []}, 'evs': {'add': [], 'change': [], 'unsubscribe': []}}, 'code': 200, 'attributes': None}
+
+===2020-12-11 11:07:00,623 INFO D:\maizi\TestCase\test_cases.py --> 
+用例名称：TC_001:申请云硬盘
+测试步骤：新建maximo工单
+请求URL：POST:http://192.168.101.89:18081/h3c/apply
+请求头：{'Cookie': 'JSESSIONID=73036BA6D51AE39F3E52275D8E4ABF20', 'Content-Length': '753', 'Content-Type': 'application/json'}
+返回状态码：200
+响应头：{'Access-Control-Allow-Origin': '', 'Access-Control-Allow-Headers': 'accept,content-type', 'Access-Control-Allow-Methods': 'OPTIONS,GET,POST,DELETE,PUT', 'Access-Control-Allow-Credentials': 'true', 'Content-Type': 'application/json;charset=UTF-8', 'Transfer-Encoding': 'chunked', 'Date': 'Sat, 12 Dec 2020 02:51:49 GMT'}
+响应体：{'status': True, 'message': '发送成功', 'data': None, 'code': 200, 'attributes': None}
+
+===2020-12-11 11:07:00,669 INFO D:\maizi\TestCase\test_cases.py --> 
+用例名称：TC_001:申请云硬盘
+测试步骤：资源预检
+请求URL：POST:http://192.168.101.89:18081/applylist/resourceCheck
+请求头：{'Cookie': 'JSESSIONID=73036BA6D51AE39F3E52275D8E4ABF20', 'Content-Length': '8', 'Content-Type': 'application/json'}
+返回状态码：200
+响应头：{'Access-Control-Allow-Origin': '', 'Access-Control-Allow-Headers': 'accept,content-type', 'Access-Control-Allow-Methods': 'OPTIONS,GET,POST,DELETE,PUT', 'Access-Control-Allow-Credentials': 'true', 'Content-Type': 'application/json;charset=UTF-8', 'Transfer-Encoding': 'chunked', 'Date': 'Sat, 12 Dec 2020 02:51:49 GMT'}
+响应体：{'status': True, 'message': '本次提交订单所有资源预检成功', 'data': True, 'code': 200, 'attributes': None}
+
+===2020-12-11 11:07:00,775 INFO D:\maizi\TestCase\test_cases.py --> 
+用例名称：TC_001:申请云硬盘
+测试步骤：提交订单
+请求URL：POST:http://192.168.101.89:18081/applylist/saveOrder/ACTY3fYe/True
+请求头：{'Cookie': 'JSESSIONID=73036BA6D51AE39F3E52275D8E4ABF20', 'Content-Length': '8', 'Content-Type': 'application/json'}
+返回状态码：200
+响应头：{'Access-Control-Allow-Origin': '', 'Access-Control-Allow-Headers': 'accept,content-type', 'Access-Control-Allow-Methods': 'OPTIONS,GET,POST,DELETE,PUT', 'Access-Control-Allow-Credentials': 'true', 'Content-Type': 'application/json;charset=UTF-8', 'Transfer-Encoding': 'chunked', 'Date': 'Sat, 12 Dec 2020 02:51:49 GMT'}
+响应体：{'status': True, 'message': '成功保存订单', 'data': None, 'code': 200, 'attributes': None}
+
+===2020-12-11 11:07:00,787 INFO D:\maizi\TestCase\test_cases.py --> 
+用例名称：TC_001:申请云硬盘
+测试步骤：审批下发
+请求URL：POST:http://192.168.101.89:18081/h3c/approve
+请求头：{'Cookie': 'JSESSIONID=73036BA6D51AE39F3E52275D8E4ABF20', 'Content-Length': '189', 'Content-Type': 'application/json'}
+返回状态码：200
+响应头：{'Access-Control-Allow-Origin': '', 'Access-Control-Allow-Headers': 'accept,content-type', 'Access-Control-Allow-Methods': 'OPTIONS,GET,POST,DELETE,PUT', 'Access-Control-Allow-Credentials': 'true', 'Content-Type': 'application/json;charset=UTF-8', 'Transfer-Encoding': 'chunked', 'Date': 'Sat, 12 Dec 2020 02:51:49 GMT'}
+响应体：{'status': False, 'message': '工单号[ACTY3fYe]没有需要下发的资源，数据存在异常', 'data': None, 'code': 500, 'attributes': None}
+
+===2020-12-11 11:07:00,794 INFO D:\maizi\TestCase\test_cases.py --> 
+用例名称：TC_002:申请云2
+测试步骤：Logout
+请求URL：GET:http://192.168.101.89:18081/login/logout
+请求头：{'Cookie': 'JSESSIONID=73036BA6D51AE39F3E52275D8E4ABF20'}
+返回状态码：200
+响应头：{'Access-Control-Allow-Origin': '', 'Access-Control-Allow-Headers': 'accept,content-type', 'Access-Control-Allow-Methods': 'OPTIONS,GET,POST,DELETE,PUT', 'Access-Control-Allow-Credentials': 'true', 'Content-Type': 'application/json;charset=UTF-8', 'Transfer-Encoding': 'chunked', 'Date': 'Sat, 12 Dec 2020 02:51:49 GMT'}
+响应体：{'status': True, 'message': 'logout', 'data': None, 'code': 200, 'attributes': None}
+
+===2020-12-11 11:12:04,065 INFO D:\maizi\TestCase\test_cases.py --> 
+用例名称：TC_001:申请云硬盘
+测试步骤：Login
+请求URL：POST:http://192.168.101.89:18081/login/login
+请求头：{'Content-Length': '41', 'Content-Type': 'application/x-www-form-urlencoded'}
+返回状态码：200
+响应头：{'Access-Control-Allow-Origin': '', 'Access-Control-Allow-Headers': 'accept,content-type', 'Access-Control-Allow-Methods': 'OPTIONS,GET,POST,DELETE,PUT', 'Access-Control-Allow-Credentials': 'true', 'Set-Cookie': 'JSESSIONID=2948479E37480558CE0404847B2C2575; Path=/; HttpOnly', 'Content-Type': 'application/json;charset=UTF-8', 'Transfer-Encoding': 'chunked', 'Date': 'Sat, 12 Dec 2020 02:56:53 GMT'}
+响应体：{'status': True, 'message': None, 'data': {'id': '1df71957d770436493a84f24d9344853', 'groupId': '9052ae85792143ff955c35c52e8e41bd', 'groupName': '中国人民银行清算总中心', 'roleId': 'baae5505-cc96-4cf1-ad5a-a87285af90ae', 'roleName': '云管理员', 'platFormRoleId': 'baae5505-cc96-4cf1-ad5a-a87285af90ae', 'roleLevel': 0, 'roleLevelName': None, 'platformUserId': '1df71957d770436493a84f24d9344853', 'loginName': 'admin', 'userName': '系统管理员', 'password': None, 'pwdInvalidTime': '2020-11-06 10:28:00', 'description': '', 'owner': 'cloudos', 'certification': '', 'email': '', 'telephone': '', 'address': '', 'ipCheck': None, 'macCheck': None, 'otherInfo': '9052ae85792143ff955c35c52e8e41bd,66213f235cb046d091b67976f4726677', 'createDate': '2018-10-18 09:49:25', 'modifiedDate': '2019-11-14 19:02:18', 'logindatetime': '2020-12-12 10:56:53', 'ip': '172.17.72.1', 'digestPassword': '', 'active': True, 'locked': False}, 'code': 200, 'attributes': None}
+
+===2020-12-11 11:12:04,110 INFO D:\maizi\TestCase\test_cases.py --> 
+用例名称：TC_001:申请云硬盘
+测试步骤：云硬盘
+请求URL：POST:http://192.168.101.89:18081/serverApply/volume
+请求头：{'Cookie': 'JSESSIONID=2948479E37480558CE0404847B2C2575', 'Content-Length': '567', 'Content-Type': 'application/json'}
+返回状态码：200
+响应头：{'Access-Control-Allow-Origin': '', 'Access-Control-Allow-Headers': 'accept,content-type', 'Access-Control-Allow-Methods': 'OPTIONS,GET,POST,DELETE,PUT', 'Access-Control-Allow-Credentials': 'true', 'Content-Type': 'application/json;charset=UTF-8', 'Transfer-Encoding': 'chunked', 'Date': 'Sat, 12 Dec 2020 02:56:53 GMT'}
+响应体：{'status': False, 'message': '资源名称[人行生产中心云定制项目]已经存在!', 'data': None, 'code': 500, 'attributes': None}
+
+===2020-12-11 11:12:04,159 INFO D:\maizi\TestCase\test_cases.py --> 
+用例名称：TC_001:申请云硬盘
+测试步骤：获取云硬盘资源清单
+请求URL：GET:http://192.168.101.89:18081/applylist/listApplyListsByOperatorId
+请求头：{'Cookie': 'JSESSIONID=2948479E37480558CE0404847B2C2575'}
+返回状态码：200
+响应头：{'Access-Control-Allow-Origin': '', 'Access-Control-Allow-Headers': 'accept,content-type', 'Access-Control-Allow-Methods': 'OPTIONS,GET,POST,DELETE,PUT', 'Access-Control-Allow-Credentials': 'true', 'Content-Type': 'application/json;charset=UTF-8', 'Transfer-Encoding': 'chunked', 'Date': 'Sat, 12 Dec 2020 02:56:53 GMT'}
+响应体：{'status': True, 'message': None, 'data': {'server': {'add': [], 'change': [], 'unsubscribe': []}, 'volume': {'add': [], 'change': [], 'unsubscribe': []}, 'port': {'add': [], 'change': [], 'unsubscribe': []}, 'baremetal': {'add': [], 'change': [], 'unsubscribe': []}, 'powervm': {'add': [], 'change': [], 'unsubscribe': []}, 'powervolume': {'add': [], 'change': [], 'unsubscribe': []}, 'ecs': {'add': [], 'change': [], 'unsubscribe': []}, 'eip': {'add': [], 'change': [], 'unsubscribe': []}, 'evs': {'add': [], 'change': [], 'unsubscribe': []}}, 'code': 200, 'attributes': None}
+
+===2020-12-11 11:12:04,192 INFO D:\maizi\TestCase\test_cases.py --> 
+用例名称：TC_001:申请云硬盘
+测试步骤：新建maximo工单
+请求URL：POST:http://192.168.101.89:18081/h3c/apply
+请求头：{'Cookie': 'JSESSIONID=2948479E37480558CE0404847B2C2575', 'Content-Length': '753', 'Content-Type': 'application/json'}
+返回状态码：200
+响应头：{'Access-Control-Allow-Origin': '', 'Access-Control-Allow-Headers': 'accept,content-type', 'Access-Control-Allow-Methods': 'OPTIONS,GET,POST,DELETE,PUT', 'Access-Control-Allow-Credentials': 'true', 'Content-Type': 'application/json;charset=UTF-8', 'Transfer-Encoding': 'chunked', 'Date': 'Sat, 12 Dec 2020 02:56:53 GMT'}
+响应体：{'status': True, 'message': '发送成功', 'data': None, 'code': 200, 'attributes': None}
+
+===2020-12-11 11:12:04,237 INFO D:\maizi\TestCase\test_cases.py --> 
+用例名称：TC_001:申请云硬盘
+测试步骤：资源预检
+请求URL：POST:http://192.168.101.89:18081/applylist/resourceCheck
+请求头：{'Cookie': 'JSESSIONID=2948479E37480558CE0404847B2C2575', 'Content-Length': '8', 'Content-Type': 'application/json'}
+返回状态码：200
+响应头：{'Access-Control-Allow-Origin': '', 'Access-Control-Allow-Headers': 'accept,content-type', 'Access-Control-Allow-Methods': 'OPTIONS,GET,POST,DELETE,PUT', 'Access-Control-Allow-Credentials': 'true', 'Content-Type': 'application/json;charset=UTF-8', 'Transfer-Encoding': 'chunked', 'Date': 'Sat, 12 Dec 2020 02:56:53 GMT'}
+响应体：{'status': True, 'message': '本次提交订单所有资源预检成功', 'data': True, 'code': 200, 'attributes': None}
+
+===2020-12-11 11:12:04,347 INFO D:\maizi\TestCase\test_cases.py --> 
+用例名称：TC_001:申请云硬盘
+测试步骤：提交订单
+请求URL：POST:http://192.168.101.89:18081/applylist/saveOrder/ACTZ4dmd/True
+请求头：{'Cookie': 'JSESSIONID=2948479E37480558CE0404847B2C2575', 'Content-Length': '8', 'Content-Type': 'application/json'}
+返回状态码：200
+响应头：{'Access-Control-Allow-Origin': '', 'Access-Control-Allow-Headers': 'accept,content-type', 'Access-Control-Allow-Methods': 'OPTIONS,GET,POST,DELETE,PUT', 'Access-Control-Allow-Credentials': 'true', 'Content-Type': 'application/json;charset=UTF-8', 'Transfer-Encoding': 'chunked', 'Date': 'Sat, 12 Dec 2020 02:56:53 GMT'}
+响应体：{'status': True, 'message': '成功保存订单', 'data': None, 'code': 200, 'attributes': None}
+
+===2020-12-11 11:12:04,359 INFO D:\maizi\TestCase\test_cases.py --> 
+用例名称：TC_001:申请云硬盘
+测试步骤：审批下发
+请求URL：POST:http://192.168.101.89:18081/h3c/approve
+请求头：{'Cookie': 'JSESSIONID=2948479E37480558CE0404847B2C2575', 'Content-Length': '189', 'Content-Type': 'application/json'}
+返回状态码：200
+响应头：{'Access-Control-Allow-Origin': '', 'Access-Control-Allow-Headers': 'accept,content-type', 'Access-Control-Allow-Methods': 'OPTIONS,GET,POST,DELETE,PUT', 'Access-Control-Allow-Credentials': 'true', 'Content-Type': 'application/json;charset=UTF-8', 'Transfer-Encoding': 'chunked', 'Date': 'Sat, 12 Dec 2020 02:56:53 GMT'}
+响应体：{'status': False, 'message': '工单号[ACTZ4dmd]没有需要下发的资源，数据存在异常', 'data': None, 'code': 500, 'attributes': None}
+
+===2020-12-11 11:12:04,365 INFO D:\maizi\TestCase\test_cases.py --> 
+用例名称：TC_002:申请云2
+测试步骤：Logout
+请求URL：GET:http://192.168.101.89:18081/login/logout
+请求头：{'Cookie': 'JSESSIONID=2948479E37480558CE0404847B2C2575'}
+返回状态码：200
+响应头：{'Access-Control-Allow-Origin': '', 'Access-Control-Allow-Headers': 'accept,content-type', 'Access-Control-Allow-Methods': 'OPTIONS,GET,POST,DELETE,PUT', 'Access-Control-Allow-Credentials': 'true', 'Content-Type': 'application/json;charset=UTF-8', 'Transfer-Encoding': 'chunked', 'Date': 'Sat, 12 Dec 2020 02:56:53 GMT'}
+响应体：{'status': True, 'message': 'logout', 'data': None, 'code': 200, 'attributes': None}
+
+===2020-12-11 11:14:39,091 INFO D:\maizi\TestCase\test_cases.py --> 
+用例名称：TC_001:申请云硬盘
+测试步骤：Login
+请求URL：POST:http://192.168.101.89:18081/login/login
+请求头：{'Content-Length': '41', 'Content-Type': 'application/x-www-form-urlencoded'}
+返回状态码：200
+响应头：{'Access-Control-Allow-Origin': '', 'Access-Control-Allow-Headers': 'accept,content-type', 'Access-Control-Allow-Methods': 'OPTIONS,GET,POST,DELETE,PUT', 'Access-Control-Allow-Credentials': 'true', 'Set-Cookie': 'JSESSIONID=B4156DA3C5D2D1E3728B2BEEE95CC98F; Path=/; HttpOnly', 'Content-Type': 'application/json;charset=UTF-8', 'Transfer-Encoding': 'chunked', 'Date': 'Sat, 12 Dec 2020 02:59:28 GMT'}
+响应体：{'status': True, 'message': None, 'data': {'id': '1df71957d770436493a84f24d9344853', 'groupId': '9052ae85792143ff955c35c52e8e41bd', 'groupName': '中国人民银行清算总中心', 'roleId': 'baae5505-cc96-4cf1-ad5a-a87285af90ae', 'roleName': '云管理员', 'platFormRoleId': 'baae5505-cc96-4cf1-ad5a-a87285af90ae', 'roleLevel': 0, 'roleLevelName': None, 'platformUserId': '1df71957d770436493a84f24d9344853', 'loginName': 'admin', 'userName': '系统管理员', 'password': None, 'pwdInvalidTime': '2020-11-06 10:28:00', 'description': '', 'owner': 'cloudos', 'certification': '', 'email': '', 'telephone': '', 'address': '', 'ipCheck': None, 'macCheck': None, 'otherInfo': '9052ae85792143ff955c35c52e8e41bd,66213f235cb046d091b67976f4726677', 'createDate': '2018-10-18 09:49:25', 'modifiedDate': '2019-11-14 19:02:18', 'logindatetime': '2020-12-12 10:59:28', 'ip': '172.17.72.1', 'digestPassword': '', 'active': True, 'locked': False}, 'code': 200, 'attributes': None}
+
+===2020-12-11 11:14:39,139 INFO D:\maizi\TestCase\test_cases.py --> 
+用例名称：TC_001:申请云硬盘
+测试步骤：云硬盘
+请求URL：POST:http://192.168.101.89:18081/serverApply/volume
+请求头：{'Cookie': 'JSESSIONID=B4156DA3C5D2D1E3728B2BEEE95CC98F', 'Content-Length': '567', 'Content-Type': 'application/json'}
+返回状态码：200
+响应头：{'Access-Control-Allow-Origin': '', 'Access-Control-Allow-Headers': 'accept,content-type', 'Access-Control-Allow-Methods': 'OPTIONS,GET,POST,DELETE,PUT', 'Access-Control-Allow-Credentials': 'true', 'Content-Type': 'application/json;charset=UTF-8', 'Transfer-Encoding': 'chunked', 'Date': 'Sat, 12 Dec 2020 02:59:28 GMT'}
+响应体：{'status': False, 'message': '资源名称[人行生产中心云定制项目]已经存在!', 'data': None, 'code': 500, 'attributes': None}
+
+===2020-12-11 11:14:39,194 INFO D:\maizi\TestCase\test_cases.py --> 
+用例名称：TC_001:申请云硬盘
+测试步骤：获取云硬盘资源清单
+请求URL：GET:http://192.168.101.89:18081/applylist/listApplyListsByOperatorId
+请求头：{'Cookie': 'JSESSIONID=B4156DA3C5D2D1E3728B2BEEE95CC98F'}
+返回状态码：200
+响应头：{'Access-Control-Allow-Origin': '', 'Access-Control-Allow-Headers': 'accept,content-type', 'Access-Control-Allow-Methods': 'OPTIONS,GET,POST,DELETE,PUT', 'Access-Control-Allow-Credentials': 'true', 'Content-Type': 'application/json;charset=UTF-8', 'Transfer-Encoding': 'chunked', 'Date': 'Sat, 12 Dec 2020 02:59:28 GMT'}
+响应体：{'status': True, 'message': None, 'data': {'server': {'add': [], 'change': [], 'unsubscribe': []}, 'volume': {'add': [], 'change': [], 'unsubscribe': []}, 'port': {'add': [], 'change': [], 'unsubscribe': []}, 'baremetal': {'add': [], 'change': [], 'unsubscribe': []}, 'powervm': {'add': [], 'change': [], 'unsubscribe': []}, 'powervolume': {'add': [], 'change': [], 'unsubscribe': []}, 'ecs': {'add': [], 'change': [], 'unsubscribe': []}, 'eip': {'add': [], 'change': [], 'unsubscribe': []}, 'evs': {'add': [], 'change': [], 'unsubscribe': []}}, 'code': 200, 'attributes': None}
+
+===2020-12-11 11:14:39,334 INFO D:\maizi\TestCase\test_cases.py --> 
+用例名称：TC_001:申请云硬盘
+测试步骤：新建maximo工单
+请求URL：POST:http://192.168.101.89:18081/h3c/apply
+请求头：{'Cookie': 'JSESSIONID=B4156DA3C5D2D1E3728B2BEEE95CC98F', 'Content-Length': '753', 'Content-Type': 'application/json'}
+返回状态码：200
+响应头：{'Access-Control-Allow-Origin': '', 'Access-Control-Allow-Headers': 'accept,content-type', 'Access-Control-Allow-Methods': 'OPTIONS,GET,POST,DELETE,PUT', 'Access-Control-Allow-Credentials': 'true', 'Content-Type': 'application/json;charset=UTF-8', 'Transfer-Encoding': 'chunked', 'Date': 'Sat, 12 Dec 2020 02:59:28 GMT'}
+响应体：{'status': True, 'message': '发送成功', 'data': None, 'code': 200, 'attributes': None}
+
+===2020-12-11 11:14:39,378 INFO D:\maizi\TestCase\test_cases.py --> 
+用例名称：TC_001:申请云硬盘
+测试步骤：资源预检
+请求URL：POST:http://192.168.101.89:18081/applylist/resourceCheck
+请求头：{'Cookie': 'JSESSIONID=B4156DA3C5D2D1E3728B2BEEE95CC98F', 'Content-Length': '8', 'Content-Type': 'application/json'}
+返回状态码：200
+响应头：{'Access-Control-Allow-Origin': '', 'Access-Control-Allow-Headers': 'accept,content-type', 'Access-Control-Allow-Methods': 'OPTIONS,GET,POST,DELETE,PUT', 'Access-Control-Allow-Credentials': 'true', 'Content-Type': 'application/json;charset=UTF-8', 'Transfer-Encoding': 'chunked', 'Date': 'Sat, 12 Dec 2020 02:59:28 GMT'}
+响应体：{'status': True, 'message': '本次提交订单所有资源预检成功', 'data': True, 'code': 200, 'attributes': None}
+
+===2020-12-11 11:14:39,487 INFO D:\maizi\TestCase\test_cases.py --> 
+用例名称：TC_001:申请云硬盘
+测试步骤：提交订单
+请求URL：POST:http://192.168.101.89:18081/applylist/saveOrder/ACTOktzF/True
+请求头：{'Cookie': 'JSESSIONID=B4156DA3C5D2D1E3728B2BEEE95CC98F', 'Content-Length': '8', 'Content-Type': 'application/json'}
+返回状态码：200
+响应头：{'Access-Control-Allow-Origin': '', 'Access-Control-Allow-Headers': 'accept,content-type', 'Access-Control-Allow-Methods': 'OPTIONS,GET,POST,DELETE,PUT', 'Access-Control-Allow-Credentials': 'true', 'Content-Type': 'application/json;charset=UTF-8', 'Transfer-Encoding': 'chunked', 'Date': 'Sat, 12 Dec 2020 02:59:28 GMT'}
+响应体：{'status': True, 'message': '成功保存订单', 'data': None, 'code': 200, 'attributes': None}
+
+===2020-12-11 11:14:39,503 INFO D:\maizi\TestCase\test_cases.py --> 
+用例名称：TC_001:申请云硬盘
+测试步骤：审批下发
+请求URL：POST:http://192.168.101.89:18081/h3c/approve
+请求头：{'Cookie': 'JSESSIONID=B4156DA3C5D2D1E3728B2BEEE95CC98F', 'Content-Length': '189', 'Content-Type': 'application/json'}
+返回状态码：200
+响应头：{'Access-Control-Allow-Origin': '', 'Access-Control-Allow-Headers': 'accept,content-type', 'Access-Control-Allow-Methods': 'OPTIONS,GET,POST,DELETE,PUT', 'Access-Control-Allow-Credentials': 'true', 'Content-Type': 'application/json;charset=UTF-8', 'Transfer-Encoding': 'chunked', 'Date': 'Sat, 12 Dec 2020 02:59:28 GMT'}
+响应体：{'status': False, 'message': '工单号[ACTOktzF]没有需要下发的资源，数据存在异常', 'data': None, 'code': 500, 'attributes': None}
+
+===2020-12-11 11:14:39,519 INFO D:\maizi\TestCase\test_cases.py --> 
+用例名称：TC_002:申请云2
+测试步骤：Logout
+请求URL：GET:http://192.168.101.89:18081/login/logout
+请求头：{'Cookie': 'JSESSIONID=B4156DA3C5D2D1E3728B2BEEE95CC98F'}
+返回状态码：200
+响应头：{'Access-Control-Allow-Origin': '', 'Access-Control-Allow-Headers': 'accept,content-type', 'Access-Control-Allow-Methods': 'OPTIONS,GET,POST,DELETE,PUT', 'Access-Control-Allow-Credentials': 'true', 'Content-Type': 'application/json;charset=UTF-8', 'Transfer-Encoding': 'chunked', 'Date': 'Sat, 12 Dec 2020 02:59:28 GMT'}
+响应体：{'status': True, 'message': 'logout', 'data': None, 'code': 200, 'attributes': None}
+
+===2020-12-11 11:16:16,624 INFO D:\maizi\TestCase\test_cases.py --> 
+用例名称：TC_001:申请云硬盘
+测试步骤：审批下发
+请求URL：POST:http://192.168.101.89:18081/h3c/approve
+请求头：{'Content-Length': '189', 'Content-Type': 'application/json'}
+返回状态码：200
+响应头：{'Access-Control-Allow-Origin': '', 'Access-Control-Allow-Headers': 'accept,content-type', 'Access-Control-Allow-Methods': 'OPTIONS,GET,POST,DELETE,PUT', 'Access-Control-Allow-Credentials': 'true', 'Set-Cookie': 'JSESSIONID=8CF3AB3D8D947BE82FA3D50340933D50; Path=/; HttpOnly', 'Content-Type': 'application/json;charset=UTF-8', 'Transfer-Encoding': 'chunked', 'Date': 'Sat, 12 Dec 2020 03:01:05 GMT'}
+响应体：{'status': False, 'message': '工单号[ACTCwfky]的记录不存在', 'data': None, 'code': 500, 'attributes': None}
+
+===2020-12-11 11:16:16,642 INFO D:\maizi\TestCase\test_cases.py --> 
+用例名称：TC_002:申请云2
+测试步骤：Logout
+请求URL：GET:http://192.168.101.89:18081/login/logout
+请求头：{}
+返回状态码：200
+响应头：{'Access-Control-Allow-Origin': '', 'Access-Control-Allow-Headers': 'accept,content-type', 'Access-Control-Allow-Methods': 'OPTIONS,GET,POST,DELETE,PUT', 'Access-Control-Allow-Credentials': 'true', 'Set-Cookie': 'JSESSIONID=F55A2E906CE404034CE33B813304CAB8; Path=/; HttpOnly', 'Content-Type': 'application/json;charset=UTF-8', 'Transfer-Encoding': 'chunked', 'Date': 'Sat, 12 Dec 2020 03:01:05 GMT'}
+响应体：{'status': True, 'message': 'logout', 'data': None, 'code': 200, 'attributes': None}
+
+===2020-12-11 11:16:29,526 INFO D:\maizi\TestCase\test_cases.py --> 
+用例名称：TC_001:申请云硬盘
+测试步骤：审批下发
+请求URL：POST:http://192.168.101.89:18081/h3c/approve
+请求头：{'Content-Length': '189', 'Content-Type': 'application/json'}
+返回状态码：200
+响应头：{'Access-Control-Allow-Origin': '', 'Access-Control-Allow-Headers': 'accept,content-type', 'Access-Control-Allow-Methods': 'OPTIONS,GET,POST,DELETE,PUT', 'Access-Control-Allow-Credentials': 'true', 'Set-Cookie': 'JSESSIONID=85E33DED8F6569BEF4769B8DE8DF0A9B; Path=/; HttpOnly', 'Content-Type': 'application/json;charset=UTF-8', 'Transfer-Encoding': 'chunked', 'Date': 'Sat, 12 Dec 2020 03:01:18 GMT'}
+响应体：{'status': False, 'message': '工单号[ACTcUWMH]的记录不存在', 'data': None, 'code': 500, 'attributes': None}
+
+===2020-12-11 11:16:29,544 INFO D:\maizi\TestCase\test_cases.py --> 
+用例名称：TC_002:申请云2
+测试步骤：Logout
+请求URL：GET:http://192.168.101.89:18081/login/logout
+请求头：{}
+返回状态码：200
+响应头：{'Access-Control-Allow-Origin': '', 'Access-Control-Allow-Headers': 'accept,content-type', 'Access-Control-Allow-Methods': 'OPTIONS,GET,POST,DELETE,PUT', 'Access-Control-Allow-Credentials': 'true', 'Set-Cookie': 'JSESSIONID=BEDA424FFE4C1C581ADF0117605217C4; Path=/; HttpOnly', 'Content-Type': 'application/json;charset=UTF-8', 'Transfer-Encoding': 'chunked', 'Date': 'Sat, 12 Dec 2020 03:01:18 GMT'}
+响应体：{'status': True, 'message': 'logout', 'data': None, 'code': 200, 'attributes': None}
+
+===2020-12-11 11:18:33,637 INFO D:\maizi\TestCase\test_cases.py --> 
+用例名称：TC_001:申请云硬盘
+测试步骤：Login
+请求URL：POST:http://192.168.101.89:18081/login/login
+请求头：{'Content-Length': '41', 'Content-Type': 'application/x-www-form-urlencoded'}
+返回状态码：200
+响应头：{'Access-Control-Allow-Origin': '', 'Access-Control-Allow-Headers': 'accept,content-type', 'Access-Control-Allow-Methods': 'OPTIONS,GET,POST,DELETE,PUT', 'Access-Control-Allow-Credentials': 'true', 'Set-Cookie': 'JSESSIONID=BDF0FBFE91B3DE27938D2364B941A7D5; Path=/; HttpOnly', 'Content-Type': 'application/json;charset=UTF-8', 'Transfer-Encoding': 'chunked', 'Date': 'Sat, 12 Dec 2020 03:03:22 GMT'}
+响应体：{'status': True, 'message': None, 'data': {'id': '1df71957d770436493a84f24d9344853', 'groupId': '9052ae85792143ff955c35c52e8e41bd', 'groupName': '中国人民银行清算总中心', 'roleId': 'baae5505-cc96-4cf1-ad5a-a87285af90ae', 'roleName': '云管理员', 'platFormRoleId': 'baae5505-cc96-4cf1-ad5a-a87285af90ae', 'roleLevel': 0, 'roleLevelName': None, 'platformUserId': '1df71957d770436493a84f24d9344853', 'loginName': 'admin', 'userName': '系统管理员', 'password': None, 'pwdInvalidTime': '2020-11-06 10:28:00', 'description': '', 'owner': 'cloudos', 'certification': '', 'email': '', 'telephone': '', 'address': '', 'ipCheck': None, 'macCheck': None, 'otherInfo': '9052ae85792143ff955c35c52e8e41bd,66213f235cb046d091b67976f4726677', 'createDate': '2018-10-18 09:49:25', 'modifiedDate': '2019-11-14 19:02:18', 'logindatetime': '2020-12-12 11:03:22', 'ip': '172.17.72.1', 'digestPassword': '', 'active': True, 'locked': False}, 'code': 200, 'attributes': None}
+
+===2020-12-11 11:18:33,684 INFO D:\maizi\TestCase\test_cases.py --> 
+用例名称：TC_001:申请云硬盘
+测试步骤：云硬盘
+请求URL：POST:http://192.168.101.89:18081/serverApply/volume
+请求头：{'Cookie': 'JSESSIONID=BDF0FBFE91B3DE27938D2364B941A7D5', 'Content-Length': '567', 'Content-Type': 'application/json'}
+返回状态码：200
+响应头：{'Access-Control-Allow-Origin': '', 'Access-Control-Allow-Headers': 'accept,content-type', 'Access-Control-Allow-Methods': 'OPTIONS,GET,POST,DELETE,PUT', 'Access-Control-Allow-Credentials': 'true', 'Content-Type': 'application/json;charset=UTF-8', 'Transfer-Encoding': 'chunked', 'Date': 'Sat, 12 Dec 2020 03:03:22 GMT'}
+响应体：{'status': False, 'message': '资源名称[人行生产中心云定制项目]已经存在!', 'data': None, 'code': 500, 'attributes': None}
+
+===2020-12-11 11:18:33,734 INFO D:\maizi\TestCase\test_cases.py --> 
+用例名称：TC_001:申请云硬盘
+测试步骤：获取云硬盘资源清单
+请求URL：GET:http://192.168.101.89:18081/applylist/listApplyListsByOperatorId
+请求头：{'Cookie': 'JSESSIONID=BDF0FBFE91B3DE27938D2364B941A7D5'}
+返回状态码：200
+响应头：{'Access-Control-Allow-Origin': '', 'Access-Control-Allow-Headers': 'accept,content-type', 'Access-Control-Allow-Methods': 'OPTIONS,GET,POST,DELETE,PUT', 'Access-Control-Allow-Credentials': 'true', 'Content-Type': 'application/json;charset=UTF-8', 'Transfer-Encoding': 'chunked', 'Date': 'Sat, 12 Dec 2020 03:03:22 GMT'}
+响应体：{'status': True, 'message': None, 'data': {'server': {'add': [], 'change': [], 'unsubscribe': []}, 'volume': {'add': [], 'change': [], 'unsubscribe': []}, 'port': {'add': [], 'change': [], 'unsubscribe': []}, 'baremetal': {'add': [], 'change': [], 'unsubscribe': []}, 'powervm': {'add': [], 'change': [], 'unsubscribe': []}, 'powervolume': {'add': [], 'change': [], 'unsubscribe': []}, 'ecs': {'add': [], 'change': [], 'unsubscribe': []}, 'eip': {'add': [], 'change': [], 'unsubscribe': []}, 'evs': {'add': [], 'change': [], 'unsubscribe': []}}, 'code': 200, 'attributes': None}
+
+===2020-12-11 11:18:33,754 INFO D:\maizi\TestCase\test_cases.py --> 
+用例名称：TC_001:申请云硬盘
+测试步骤：新建maximo工单
+请求URL：POST:http://192.168.101.89:18081/h3c/apply
+请求头：{'Cookie': 'JSESSIONID=BDF0FBFE91B3DE27938D2364B941A7D5', 'Content-Length': '753', 'Content-Type': 'application/json'}
+返回状态码：200
+响应头：{'Access-Control-Allow-Origin': '', 'Access-Control-Allow-Headers': 'accept,content-type', 'Access-Control-Allow-Methods': 'OPTIONS,GET,POST,DELETE,PUT', 'Access-Control-Allow-Credentials': 'true', 'Content-Type': 'application/json;charset=UTF-8', 'Transfer-Encoding': 'chunked', 'Date': 'Sat, 12 Dec 2020 03:03:22 GMT'}
+响应体：{'status': True, 'message': '发送成功', 'data': None, 'code': 200, 'attributes': None}
+
+===2020-12-11 11:18:33,802 INFO D:\maizi\TestCase\test_cases.py --> 
+用例名称：TC_001:申请云硬盘
+测试步骤：资源预检
+请求URL：POST:http://192.168.101.89:18081/applylist/resourceCheck
+请求头：{'Cookie': 'JSESSIONID=BDF0FBFE91B3DE27938D2364B941A7D5', 'Content-Length': '8', 'Content-Type': 'application/json'}
+返回状态码：200
+响应头：{'Access-Control-Allow-Origin': '', 'Access-Control-Allow-Headers': 'accept,content-type', 'Access-Control-Allow-Methods': 'OPTIONS,GET,POST,DELETE,PUT', 'Access-Control-Allow-Credentials': 'true', 'Content-Type': 'application/json;charset=UTF-8', 'Transfer-Encoding': 'chunked', 'Date': 'Sat, 12 Dec 2020 03:03:22 GMT'}
+响应体：{'status': True, 'message': '本次提交订单所有资源预检成功', 'data': True, 'code': 200, 'attributes': None}
+
+===2020-12-11 11:18:33,917 INFO D:\maizi\TestCase\test_cases.py --> 
+用例名称：TC_001:申请云硬盘
+测试步骤：提交订单
+请求URL：POST:http://192.168.101.89:18081/applylist/saveOrder/ACTEh81f/True
+请求头：{'Cookie': 'JSESSIONID=BDF0FBFE91B3DE27938D2364B941A7D5', 'Content-Length': '8', 'Content-Type': 'application/json'}
+返回状态码：200
+响应头：{'Access-Control-Allow-Origin': '', 'Access-Control-Allow-Headers': 'accept,content-type', 'Access-Control-Allow-Methods': 'OPTIONS,GET,POST,DELETE,PUT', 'Access-Control-Allow-Credentials': 'true', 'Content-Type': 'application/json;charset=UTF-8', 'Transfer-Encoding': 'chunked', 'Date': 'Sat, 12 Dec 2020 03:03:22 GMT'}
+响应体：{'status': True, 'message': '成功保存订单', 'data': None, 'code': 200, 'attributes': None}
+
+===2020-12-11 11:18:33,931 INFO D:\maizi\TestCase\test_cases.py --> 
+用例名称：TC_001:申请云硬盘
+测试步骤：审批下发
+请求URL：POST:http://192.168.101.89:18081/h3c/approve
+请求头：{'Cookie': 'JSESSIONID=BDF0FBFE91B3DE27938D2364B941A7D5', 'Content-Length': '189', 'Content-Type': 'application/json'}
+返回状态码：200
+响应头：{'Access-Control-Allow-Origin': '', 'Access-Control-Allow-Headers': 'accept,content-type', 'Access-Control-Allow-Methods': 'OPTIONS,GET,POST,DELETE,PUT', 'Access-Control-Allow-Credentials': 'true', 'Content-Type': 'application/json;charset=UTF-8', 'Transfer-Encoding': 'chunked', 'Date': 'Sat, 12 Dec 2020 03:03:22 GMT'}
+响应体：{'status': False, 'message': '工单号[ACTEh81f]没有需要下发的资源，数据存在异常', 'data': None, 'code': 500, 'attributes': None}
+
+===2020-12-11 11:18:33,938 INFO D:\maizi\TestCase\test_cases.py --> 
+用例名称：TC_002:申请云2
+测试步骤：Logout
+请求URL：GET:http://192.168.101.89:18081/login/logout
+请求头：{'Cookie': 'JSESSIONID=BDF0FBFE91B3DE27938D2364B941A7D5'}
+返回状态码：200
+响应头：{'Access-Control-Allow-Origin': '', 'Access-Control-Allow-Headers': 'accept,content-type', 'Access-Control-Allow-Methods': 'OPTIONS,GET,POST,DELETE,PUT', 'Access-Control-Allow-Credentials': 'true', 'Content-Type': 'application/json;charset=UTF-8', 'Transfer-Encoding': 'chunked', 'Date': 'Sat, 12 Dec 2020 03:03:22 GMT'}
+响应体：{'status': True, 'message': 'logout', 'data': None, 'code': 200, 'attributes': None}
+
+===2020-12-11 11:24:39,979 INFO D:\maizi\TestCase\test_cases.py --> 
+用例名称：TC_001:申请云硬盘
+测试步骤：审批下发
+请求URL：POST:http://192.168.101.89:18081/h3c/approve
+请求头：{'Content-Length': '189', 'Content-Type': 'application/json'}
+返回状态码：200
+响应头：{'Access-Control-Allow-Origin': '', 'Access-Control-Allow-Headers': 'accept,content-type', 'Access-Control-Allow-Methods': 'OPTIONS,GET,POST,DELETE,PUT', 'Access-Control-Allow-Credentials': 'true', 'Set-Cookie': 'JSESSIONID=B9701FEE3E1FBF7D08BBF6FFA0602BE6; Path=/; HttpOnly', 'Content-Type': 'application/json;charset=UTF-8', 'Transfer-Encoding': 'chunked', 'Date': 'Sat, 12 Dec 2020 03:09:28 GMT'}
+响应体：{'status': False, 'message': '工单号[ACTO73Wl]的记录不存在', 'data': None, 'code': 500, 'attributes': None}
+
+===2020-12-11 11:24:40,006 INFO D:\maizi\TestCase\test_cases.py --> 
+用例名称：TC_002:申请云2
+测试步骤：Logout
+请求URL：GET:http://192.168.101.89:18081/login/logout
+请求头：{}
+返回状态码：200
+响应头：{'Access-Control-Allow-Origin': '', 'Access-Control-Allow-Headers': 'accept,content-type', 'Access-Control-Allow-Methods': 'OPTIONS,GET,POST,DELETE,PUT', 'Access-Control-Allow-Credentials': 'true', 'Set-Cookie': 'JSESSIONID=343EBB2218EA6175858CDE4ECBCD8951; Path=/; HttpOnly', 'Content-Type': 'application/json;charset=UTF-8', 'Transfer-Encoding': 'chunked', 'Date': 'Sat, 12 Dec 2020 03:09:28 GMT'}
+响应体：{'status': True, 'message': 'logout', 'data': None, 'code': 200, 'attributes': None}
+
+===2020-12-11 11:25:44,653 INFO D:\maizi\TestCase\test_cases.py --> 
+用例名称：TC_001:申请云硬盘
+测试步骤：审批下发
+请求URL：POST:http://192.168.101.89:18081/h3c/approve
+请求头：{'Content-Length': '189', 'Content-Type': 'application/json'}
+返回状态码：200
+响应头：{'Access-Control-Allow-Origin': '', 'Access-Control-Allow-Headers': 'accept,content-type', 'Access-Control-Allow-Methods': 'OPTIONS,GET,POST,DELETE,PUT', 'Access-Control-Allow-Credentials': 'true', 'Set-Cookie': 'JSESSIONID=7F7A15B572385B5A61DA06A76FF3744D; Path=/; HttpOnly', 'Content-Type': 'application/json;charset=UTF-8', 'Transfer-Encoding': 'chunked', 'Date': 'Sat, 12 Dec 2020 03:10:33 GMT'}
+响应体：{'status': False, 'message': '工单号[ACTlWZcg]的记录不存在', 'data': None, 'code': 500, 'attributes': None}
+
+===2020-12-11 11:25:44,666 INFO D:\maizi\TestCase\test_cases.py --> 
+用例名称：TC_002:申请云2
+测试步骤：Logout
+请求URL：GET:http://192.168.101.89:18081/login/logout
+请求头：{}
+返回状态码：200
+响应头：{'Access-Control-Allow-Origin': '', 'Access-Control-Allow-Headers': 'accept,content-type', 'Access-Control-Allow-Methods': 'OPTIONS,GET,POST,DELETE,PUT', 'Access-Control-Allow-Credentials': 'true', 'Set-Cookie': 'JSESSIONID=1F41EAC0EB30BCB00C8EC2A99C6C960A; Path=/; HttpOnly', 'Content-Type': 'application/json;charset=UTF-8', 'Transfer-Encoding': 'chunked', 'Date': 'Sat, 12 Dec 2020 03:10:33 GMT'}
+响应体：{'status': True, 'message': 'logout', 'data': None, 'code': 200, 'attributes': None}
+
+===2020-12-11 11:27:38,229 INFO D:\maizi\TestCase\test_cases.py --> 
+用例名称：TC_001:申请云硬盘
+测试步骤：审批下发
+请求URL：POST:http://192.168.101.89:18081/h3c/approve
+请求头：{'Content-Length': '189', 'Content-Type': 'application/json'}
+返回状态码：200
+响应头：{'Access-Control-Allow-Origin': '', 'Access-Control-Allow-Headers': 'accept,content-type', 'Access-Control-Allow-Methods': 'OPTIONS,GET,POST,DELETE,PUT', 'Access-Control-Allow-Credentials': 'true', 'Set-Cookie': 'JSESSIONID=1204EC419F495298A491872CBBCB634C; Path=/; HttpOnly', 'Content-Type': 'application/json;charset=UTF-8', 'Transfer-Encoding': 'chunked', 'Date': 'Sat, 12 Dec 2020 03:12:27 GMT'}
+响应体：{'status': False, 'message': '工单号[ACTig03X]的记录不存在', 'data': None, 'code': 500, 'attributes': None}
+
+===2020-12-11 11:27:38,240 INFO D:\maizi\TestCase\test_cases.py --> 
+用例名称：TC_002:申请云2
+测试步骤：Logout
+请求URL：GET:http://192.168.101.89:18081/login/logout
+请求头：{}
+返回状态码：200
+响应头：{'Access-Control-Allow-Origin': '', 'Access-Control-Allow-Headers': 'accept,content-type', 'Access-Control-Allow-Methods': 'OPTIONS,GET,POST,DELETE,PUT', 'Access-Control-Allow-Credentials': 'true', 'Set-Cookie': 'JSESSIONID=E60BC011299B88C85DDD46B1C5DABCD0; Path=/; HttpOnly', 'Content-Type': 'application/json;charset=UTF-8', 'Transfer-Encoding': 'chunked', 'Date': 'Sat, 12 Dec 2020 03:12:27 GMT'}
+响应体：{'status': True, 'message': 'logout', 'data': None, 'code': 200, 'attributes': None}
+
+===2020-12-11 11:31:04,401 INFO D:\maizi\TestCase\test_cases.py --> 
+用例名称：TC_001:申请云硬盘
+测试步骤：审批下发
+请求URL：POST:http://192.168.101.89:18081/h3c/approve
+请求头：{'Content-Length': '189', 'Content-Type': 'application/json'}
+返回状态码：200
+响应头：{'Access-Control-Allow-Origin': '', 'Access-Control-Allow-Headers': 'accept,content-type', 'Access-Control-Allow-Methods': 'OPTIONS,GET,POST,DELETE,PUT', 'Access-Control-Allow-Credentials': 'true', 'Set-Cookie': 'JSESSIONID=D2626DDE36656803EC02D80117AB1056; Path=/; HttpOnly', 'Content-Type': 'application/json;charset=UTF-8', 'Transfer-Encoding': 'chunked', 'Date': 'Sat, 12 Dec 2020 03:15:53 GMT'}
+响应体：{'status': False, 'message': '工单号[ACTpBYdr]的记录不存在', 'data': None, 'code': 500, 'attributes': None}
+
+===2020-12-11 11:31:04,408 INFO D:\maizi\TestCase\test_cases.py --> 
+用例名称：TC_002:申请云2
+测试步骤：Logout
+请求URL：GET:http://192.168.101.89:18081/login/logout
+请求头：{}
+返回状态码：200
+响应头：{'Access-Control-Allow-Origin': '', 'Access-Control-Allow-Headers': 'accept,content-type', 'Access-Control-Allow-Methods': 'OPTIONS,GET,POST,DELETE,PUT', 'Access-Control-Allow-Credentials': 'true', 'Set-Cookie': 'JSESSIONID=AE7D32306E5EA8C5064B98C9F10F4EA5; Path=/; HttpOnly', 'Content-Type': 'application/json;charset=UTF-8', 'Transfer-Encoding': 'chunked', 'Date': 'Sat, 12 Dec 2020 03:15:53 GMT'}
+响应体：{'status': True, 'message': 'logout', 'data': None, 'code': 200, 'attributes': None}
+
+===2020-12-11 11:38:26,633 INFO D:\maizi\TestCase\test_cases.py --> 
+用例名称：TC_001:申请云硬盘
+测试步骤：审批下发
+请求URL：POST:http://192.168.101.89:18081/h3c/approve
+请求头：{'Content-Length': '189', 'Content-Type': 'application/json'}
+返回状态码：200
+响应头：{'Access-Control-Allow-Origin': '', 'Access-Control-Allow-Headers': 'accept,content-type', 'Access-Control-Allow-Methods': 'OPTIONS,GET,POST,DELETE,PUT', 'Access-Control-Allow-Credentials': 'true', 'Set-Cookie': 'JSESSIONID=2C44CE601CBC4EEF1A4E61D3E7B91AB1; Path=/; HttpOnly', 'Content-Type': 'application/json;charset=UTF-8', 'Transfer-Encoding': 'chunked', 'Date': 'Sat, 12 Dec 2020 03:23:15 GMT'}
+响应体：{'status': False, 'message': '工单号[ACTK2Jk2]的记录不存在', 'data': None, 'code': 500, 'attributes': None}
+
+===2020-12-11 11:38:26,641 INFO D:\maizi\TestCase\test_cases.py --> 
+用例名称：TC_002:申请云2
+测试步骤：Logout
+请求URL：GET:http://192.168.101.89:18081/login/logout
+请求头：{}
+返回状态码：200
+响应头：{'Access-Control-Allow-Origin': '', 'Access-Control-Allow-Headers': 'accept,content-type', 'Access-Control-Allow-Methods': 'OPTIONS,GET,POST,DELETE,PUT', 'Access-Control-Allow-Credentials': 'true', 'Set-Cookie': 'JSESSIONID=4270A1AF181F85B0A4447BDE15CD087A; Path=/; HttpOnly', 'Content-Type': 'application/json;charset=UTF-8', 'Transfer-Encoding': 'chunked', 'Date': 'Sat, 12 Dec 2020 03:23:15 GMT'}
+响应体：{'status': True, 'message': 'logout', 'data': None, 'code': 200, 'attributes': None}
+
+===2020-12-11 11:41:56,623 INFO D:\maizi\TestCase\test_cases.py --> 
+用例名称：TC_001:申请云硬盘
+测试步骤：审批下发
+请求URL：POST:http://192.168.101.89:18081/h3c/approve
+请求头：{'Content-Length': '189', 'Content-Type': 'application/json'}
+返回状态码：200
+响应头：{'Access-Control-Allow-Origin': '', 'Access-Control-Allow-Headers': 'accept,content-type', 'Access-Control-Allow-Methods': 'OPTIONS,GET,POST,DELETE,PUT', 'Access-Control-Allow-Credentials': 'true', 'Set-Cookie': 'JSESSIONID=C950CBB7953762D8731AE9EA69D44998; Path=/; HttpOnly', 'Content-Type': 'application/json;charset=UTF-8', 'Transfer-Encoding': 'chunked', 'Date': 'Sat, 12 Dec 2020 03:26:45 GMT'}
+响应体：{'status': False, 'message': '工单号[ACTvcZiM]的记录不存在', 'data': None, 'code': 500, 'attributes': None}
+
+===2020-12-11 11:41:56,634 INFO D:\maizi\TestCase\test_cases.py --> 
+用例名称：TC_002:申请云2
+测试步骤：Logout
+请求URL：GET:http://192.168.101.89:18081/login/logout
+请求头：{}
+返回状态码：200
+响应头：{'Access-Control-Allow-Origin': '', 'Access-Control-Allow-Headers': 'accept,content-type', 'Access-Control-Allow-Methods': 'OPTIONS,GET,POST,DELETE,PUT', 'Access-Control-Allow-Credentials': 'true', 'Set-Cookie': 'JSESSIONID=B60BA692B7B091E80D605C6D2075FAB7; Path=/; HttpOnly', 'Content-Type': 'application/json;charset=UTF-8', 'Transfer-Encoding': 'chunked', 'Date': 'Sat, 12 Dec 2020 03:26:45 GMT'}
+响应体：{'status': True, 'message': 'logout', 'data': None, 'code': 200, 'attributes': None}
+
+===2020-12-11 11:42:47,782 INFO D:\maizi\TestCase\test_cases.py --> 
+用例名称：TC_001:申请云硬盘
+测试步骤：审批下发
+请求URL：POST:http://192.168.101.89:18081/h3c/approve
+请求头：{'Content-Length': '189', 'Content-Type': 'application/json'}
+返回状态码：200
+响应头：{'Access-Control-Allow-Origin': '', 'Access-Control-Allow-Headers': 'accept,content-type', 'Access-Control-Allow-Methods': 'OPTIONS,GET,POST,DELETE,PUT', 'Access-Control-Allow-Credentials': 'true', 'Set-Cookie': 'JSESSIONID=6F899A16EBC1C00F7ABED17FA33B7889; Path=/; HttpOnly', 'Content-Type': 'application/json;charset=UTF-8', 'Transfer-Encoding': 'chunked', 'Date': 'Sat, 12 Dec 2020 03:27:36 GMT'}
+响应体：{'status': False, 'message': '工单号[ACTAvvC8]的记录不存在', 'data': None, 'code': 500, 'attributes': None}
+
+===2020-12-11 11:42:47,791 INFO D:\maizi\TestCase\test_cases.py --> 
+用例名称：TC_002:申请云2
+测试步骤：Logout
+请求URL：GET:http://192.168.101.89:18081/login/logout
+请求头：{}
+返回状态码：200
+响应头：{'Access-Control-Allow-Origin': '', 'Access-Control-Allow-Headers': 'accept,content-type', 'Access-Control-Allow-Methods': 'OPTIONS,GET,POST,DELETE,PUT', 'Access-Control-Allow-Credentials': 'true', 'Set-Cookie': 'JSESSIONID=3B4C171107D77CD42D11B00EF915C508; Path=/; HttpOnly', 'Content-Type': 'application/json;charset=UTF-8', 'Transfer-Encoding': 'chunked', 'Date': 'Sat, 12 Dec 2020 03:27:36 GMT'}
+响应体：{'status': True, 'message': 'logout', 'data': None, 'code': 200, 'attributes': None}
+
+===2020-12-11 11:46:25,647 INFO D:\maizi\TestCase\test_cases.py --> 
+用例名称：TC_001:申请云硬盘
+测试步骤：审批下发
+请求URL：POST:http://192.168.101.89:18081/h3c/approve
+请求头：{'Content-Length': '189', 'Content-Type': 'application/json'}
+返回状态码：200
+响应头：{'Access-Control-Allow-Origin': '', 'Access-Control-Allow-Headers': 'accept,content-type', 'Access-Control-Allow-Methods': 'OPTIONS,GET,POST,DELETE,PUT', 'Access-Control-Allow-Credentials': 'true', 'Set-Cookie': 'JSESSIONID=5751A4D6D027B68346B91BA7A6534090; Path=/; HttpOnly', 'Content-Type': 'application/json;charset=UTF-8', 'Transfer-Encoding': 'chunked', 'Date': 'Sat, 12 Dec 2020 03:31:14 GMT'}
+响应体：{'status': False, 'message': '工单号[ACT5w1Jr]的记录不存在', 'data': None, 'code': 500, 'attributes': None}
+
+===2020-12-11 11:46:25,658 INFO D:\maizi\TestCase\test_cases.py --> 
+用例名称：TC_002:申请云2
+测试步骤：Logout
+请求URL：GET:http://192.168.101.89:18081/login/logout
+请求头：{}
+返回状态码：200
+响应头：{'Access-Control-Allow-Origin': '', 'Access-Control-Allow-Headers': 'accept,content-type', 'Access-Control-Allow-Methods': 'OPTIONS,GET,POST,DELETE,PUT', 'Access-Control-Allow-Credentials': 'true', 'Set-Cookie': 'JSESSIONID=B9F73065F642C222D5627A515F1F7502; Path=/; HttpOnly', 'Content-Type': 'application/json;charset=UTF-8', 'Transfer-Encoding': 'chunked', 'Date': 'Sat, 12 Dec 2020 03:31:14 GMT'}
+响应体：{'status': True, 'message': 'logout', 'data': None, 'code': 200, 'attributes': None}
+
+===2020-12-11 11:47:36,781 INFO D:\maizi\TestCase\test_cases.py --> 
+用例名称：TC_001:申请云硬盘
+测试步骤：审批下发
+请求URL：POST:http://192.168.101.89:18081/h3c/approve
+请求头：{'Content-Length': '189', 'Content-Type': 'application/json'}
+返回状态码：200
+响应头：{'Access-Control-Allow-Origin': '', 'Access-Control-Allow-Headers': 'accept,content-type', 'Access-Control-Allow-Methods': 'OPTIONS,GET,POST,DELETE,PUT', 'Access-Control-Allow-Credentials': 'true', 'Set-Cookie': 'JSESSIONID=EE8B5B1D82187EF718C5181BB38B9304; Path=/; HttpOnly', 'Content-Type': 'application/json;charset=UTF-8', 'Transfer-Encoding': 'chunked', 'Date': 'Sat, 12 Dec 2020 03:32:25 GMT'}
+响应体：{'status': False, 'message': '工单号[ACTPlWNz]的记录不存在', 'data': None, 'code': 500, 'attributes': None}
+
+===2020-12-11 11:47:36,792 INFO D:\maizi\TestCase\test_cases.py --> 
+用例名称：TC_002:申请云2
+测试步骤：Logout
+请求URL：GET:http://192.168.101.89:18081/login/logout
+请求头：{}
+返回状态码：200
+响应头：{'Access-Control-Allow-Origin': '', 'Access-Control-Allow-Headers': 'accept,content-type', 'Access-Control-Allow-Methods': 'OPTIONS,GET,POST,DELETE,PUT', 'Access-Control-Allow-Credentials': 'true', 'Set-Cookie': 'JSESSIONID=8AE5B18FADC22BCF8B5DF809E7A3AB53; Path=/; HttpOnly', 'Content-Type': 'application/json;charset=UTF-8', 'Transfer-Encoding': 'chunked', 'Date': 'Sat, 12 Dec 2020 03:32:25 GMT'}
+响应体：{'status': True, 'message': 'logout', 'data': None, 'code': 200, 'attributes': None}
+
+===2020-12-11 11:48:02,266 INFO D:\maizi\TestCase\test_cases.py --> 
+用例名称：TC_001:申请云硬盘
+测试步骤：审批下发
+请求URL：POST:http://192.168.101.89:18081/h3c/approve
+请求头：{'Content-Length': '189', 'Content-Type': 'application/json'}
+返回状态码：200
+响应头：{'Access-Control-Allow-Origin': '', 'Access-Control-Allow-Headers': 'accept,content-type', 'Access-Control-Allow-Methods': 'OPTIONS,GET,POST,DELETE,PUT', 'Access-Control-Allow-Credentials': 'true', 'Set-Cookie': 'JSESSIONID=B4EB0E12B8B30B535FFA7DD5A6928511; Path=/; HttpOnly', 'Content-Type': 'application/json;charset=UTF-8', 'Transfer-Encoding': 'chunked', 'Date': 'Sat, 12 Dec 2020 03:32:51 GMT'}
+响应体：{'status': False, 'message': '工单号[ACT74ibQ]的记录不存在', 'data': None, 'code': 500, 'attributes': None}
+
+===2020-12-11 11:48:02,278 INFO D:\maizi\TestCase\test_cases.py --> 
+用例名称：TC_002:申请云2
+测试步骤：Logout
+请求URL：GET:http://192.168.101.89:18081/login/logout
+请求头：{}
+返回状态码：200
+响应头：{'Access-Control-Allow-Origin': '', 'Access-Control-Allow-Headers': 'accept,content-type', 'Access-Control-Allow-Methods': 'OPTIONS,GET,POST,DELETE,PUT', 'Access-Control-Allow-Credentials': 'true', 'Set-Cookie': 'JSESSIONID=3E3CAD93FC7C68F7C9A20B09F984F190; Path=/; HttpOnly', 'Content-Type': 'application/json;charset=UTF-8', 'Transfer-Encoding': 'chunked', 'Date': 'Sat, 12 Dec 2020 03:32:51 GMT'}
+响应体：{'status': True, 'message': 'logout', 'data': None, 'code': 200, 'attributes': None}
+
+===2020-12-11 11:49:22,908 INFO D:\maizi\TestCase\test_cases.py --> 
+用例名称：TC_001:申请云硬盘
+测试步骤：审批下发
+请求URL：POST:http://192.168.101.89:18081/h3c/approve
+请求头：{'Content-Length': '189', 'Content-Type': 'application/json'}
+返回状态码：200
+响应头：{'Access-Control-Allow-Origin': '', 'Access-Control-Allow-Headers': 'accept,content-type', 'Access-Control-Allow-Methods': 'OPTIONS,GET,POST,DELETE,PUT', 'Access-Control-Allow-Credentials': 'true', 'Set-Cookie': 'JSESSIONID=F9688F3A7D2DA2B7C28016FED95A60B2; Path=/; HttpOnly', 'Content-Type': 'application/json;charset=UTF-8', 'Transfer-Encoding': 'chunked', 'Date': 'Sat, 12 Dec 2020 03:34:11 GMT'}
+响应体：{'status': False, 'message': '工单号[ACTO77Xn]的记录不存在', 'data': None, 'code': 500, 'attributes': None}
+
+===2020-12-11 11:49:22,915 INFO D:\maizi\TestCase\test_cases.py --> 
+用例名称：TC_002:申请云2
+测试步骤：Logout
+请求URL：GET:http://192.168.101.89:18081/login/logout
+请求头：{}
+返回状态码：200
+响应头：{'Access-Control-Allow-Origin': '', 'Access-Control-Allow-Headers': 'accept,content-type', 'Access-Control-Allow-Methods': 'OPTIONS,GET,POST,DELETE,PUT', 'Access-Control-Allow-Credentials': 'true', 'Set-Cookie': 'JSESSIONID=DA43BC05CCC7978D082D622536EAE812; Path=/; HttpOnly', 'Content-Type': 'application/json;charset=UTF-8', 'Transfer-Encoding': 'chunked', 'Date': 'Sat, 12 Dec 2020 03:34:11 GMT'}
+响应体：{'status': True, 'message': 'logout', 'data': None, 'code': 200, 'attributes': None}
+
+===2020-12-11 11:55:27,176 INFO D:\maizi\TestCase\test_cases.py --> 
+用例名称：TC_001:申请云硬盘
+测试步骤：审批下发
+请求URL：POST:http://192.168.101.89:18081/h3c/approve
+请求头：{'Content-Length': '189', 'Content-Type': 'application/json'}
+返回状态码：200
+响应头：{'Access-Control-Allow-Origin': '', 'Access-Control-Allow-Headers': 'accept,content-type', 'Access-Control-Allow-Methods': 'OPTIONS,GET,POST,DELETE,PUT', 'Access-Control-Allow-Credentials': 'true', 'Set-Cookie': 'JSESSIONID=D9DAEB090DFDF5974E0F841A9EC7ADD3; Path=/; HttpOnly', 'Content-Type': 'application/json;charset=UTF-8', 'Transfer-Encoding': 'chunked', 'Date': 'Sat, 12 Dec 2020 03:40:16 GMT'}
+响应体：{'status': False, 'message': '工单号[ACTEul21]的记录不存在', 'data': None, 'code': 500, 'attributes': None}
+
+===2020-12-11 11:55:27,183 INFO D:\maizi\TestCase\test_cases.py --> 
+用例名称：TC_002:申请云2
+测试步骤：Logout
+请求URL：GET:http://192.168.101.89:18081/login/logout
+请求头：{}
+返回状态码：200
+响应头：{'Access-Control-Allow-Origin': '', 'Access-Control-Allow-Headers': 'accept,content-type', 'Access-Control-Allow-Methods': 'OPTIONS,GET,POST,DELETE,PUT', 'Access-Control-Allow-Credentials': 'true', 'Set-Cookie': 'JSESSIONID=EBA7C0DA1ACB57DDD72318FA2D7D2F81; Path=/; HttpOnly', 'Content-Type': 'application/json;charset=UTF-8', 'Transfer-Encoding': 'chunked', 'Date': 'Sat, 12 Dec 2020 03:40:16 GMT'}
+响应体：{'status': True, 'message': 'logout', 'data': None, 'code': 200, 'attributes': None}
+
+===2020-12-11 11:55:46,596 INFO D:\maizi\TestCase\test_cases.py --> 
+用例名称：TC_001:申请云硬盘
+测试步骤：Login
+请求URL：POST:http://192.168.101.89:18081/login/login
+请求头：{'Content-Length': '41', 'Content-Type': 'application/x-www-form-urlencoded'}
+返回状态码：200
+响应头：{'Access-Control-Allow-Origin': '', 'Access-Control-Allow-Headers': 'accept,content-type', 'Access-Control-Allow-Methods': 'OPTIONS,GET,POST,DELETE,PUT', 'Access-Control-Allow-Credentials': 'true', 'Set-Cookie': 'JSESSIONID=12DBA4368F8556E178DF93BE59CCFE62; Path=/; HttpOnly', 'Content-Type': 'application/json;charset=UTF-8', 'Transfer-Encoding': 'chunked', 'Date': 'Sat, 12 Dec 2020 03:40:35 GMT'}
+响应体：{'status': True, 'message': None, 'data': {'id': '1df71957d770436493a84f24d9344853', 'groupId': '9052ae85792143ff955c35c52e8e41bd', 'groupName': '中国人民银行清算总中心', 'roleId': 'baae5505-cc96-4cf1-ad5a-a87285af90ae', 'roleName': '云管理员', 'platFormRoleId': 'baae5505-cc96-4cf1-ad5a-a87285af90ae', 'roleLevel': 0, 'roleLevelName': None, 'platformUserId': '1df71957d770436493a84f24d9344853', 'loginName': 'admin', 'userName': '系统管理员', 'password': None, 'pwdInvalidTime': '2020-11-06 10:28:00', 'description': '', 'owner': 'cloudos', 'certification': '', 'email': '', 'telephone': '', 'address': '', 'ipCheck': None, 'macCheck': None, 'otherInfo': '9052ae85792143ff955c35c52e8e41bd,66213f235cb046d091b67976f4726677', 'createDate': '2018-10-18 09:49:25', 'modifiedDate': '2019-11-14 19:02:18', 'logindatetime': '2020-12-12 11:40:35', 'ip': '172.17.72.1', 'digestPassword': '', 'active': True, 'locked': False}, 'code': 200, 'attributes': None}
+
+===2020-12-11 11:55:46,649 INFO D:\maizi\TestCase\test_cases.py --> 
+用例名称：TC_001:申请云硬盘
+测试步骤：云硬盘
+请求URL：POST:http://192.168.101.89:18081/serverApply/volume
+请求头：{'Cookie': 'JSESSIONID=12DBA4368F8556E178DF93BE59CCFE62', 'Content-Length': '508', 'Content-Type': 'application/json'}
+返回状态码：200
+响应头：{'Access-Control-Allow-Origin': '', 'Access-Control-Allow-Headers': 'accept,content-type', 'Access-Control-Allow-Methods': 'OPTIONS,GET,POST,DELETE,PUT', 'Access-Control-Allow-Credentials': 'true', 'Content-Type': 'application/json;charset=UTF-8', 'Transfer-Encoding': 'chunked', 'Date': 'Sat, 12 Dec 2020 03:40:35 GMT'}
+响应体：{'status': True, 'message': '申请X86硬盘！', 'data': None, 'code': 200, 'attributes': None}
+
+===2020-12-11 11:55:46,702 INFO D:\maizi\TestCase\test_cases.py --> 
+用例名称：TC_001:申请云硬盘
+测试步骤：获取云硬盘资源清单
+请求URL：GET:http://192.168.101.89:18081/applylist/listApplyListsByOperatorId
+请求头：{'Cookie': 'JSESSIONID=12DBA4368F8556E178DF93BE59CCFE62'}
+返回状态码：200
+响应头：{'Access-Control-Allow-Origin': '', 'Access-Control-Allow-Headers': 'accept,content-type', 'Access-Control-Allow-Methods': 'OPTIONS,GET,POST,DELETE,PUT', 'Access-Control-Allow-Credentials': 'true', 'Content-Type': 'application/json;charset=UTF-8', 'Transfer-Encoding': 'chunked', 'Date': 'Sat, 12 Dec 2020 03:40:35 GMT'}
+响应体：{'status': True, 'message': None, 'data': {'server': {'add': [], 'change': [], 'unsubscribe': []}, 'volume': {'add': [{'applyListId': '39d806f8-f392-493d-bdfb-febdde6848f3', 'resourceContent': '{"applyId":"","volumeId":null,"volumeName":"disk2Mf","description":"","volumeNums":1,"volumeIds":null,"serverName":"","serverId":"","normId":"","storageType":"普通","resTenancy":"-1","businessSystemName":"0722测试1","businessSystemId":"f4fead37-27ab-4fe6-b2a7-109335b417c0","azoneId":"495ce550-a285-41eb-9345-26404597da79","azoneLabelName":"v8_cinder","azoneName":"vmware_cinder","hostName":"cpn-v8rc@vmware_volume","volumeSize":100,"newVolumeSize":"100GB","oldVolumeSize":"","shared":false,"changeType":null,"unsubscribeType":null,"serverVirtType":null,"serverHost":null}', 'resourceNumber': 1, 'resourceName': None, 'resourceChangeResult': None, 'softwareSystemId': None, 'softwareSystemName': '0722测试1', 'powerTemplateVMName': None}], 'change': [], 'unsubscribe': []}, 'port': {'add': [], 'change': [], 'unsubscribe': []}, 'baremetal': {'add': [], 'change': [], 'unsubscribe': []}, 'powervm': {'add': [], 'change': [], 'unsubscribe': []}, 'powervolume': {'add': [], 'change': [], 'unsubscribe': []}, 'ecs': {'add': [], 'change': [], 'unsubscribe': []}, 'eip': {'add': [], 'change': [], 'unsubscribe': []}, 'evs': {'add': [], 'change': [], 'unsubscribe': []}}, 'code': 200, 'attributes': None}
+
+===2020-12-11 11:55:46,752 INFO D:\maizi\TestCase\test_cases.py --> 
+用例名称：TC_001:申请云硬盘
+测试步骤：新建maximo工单
+请求URL：POST:http://192.168.101.89:18081/h3c/apply
+请求头：{'Cookie': 'JSESSIONID=12DBA4368F8556E178DF93BE59CCFE62', 'Content-Length': '753', 'Content-Type': 'application/json'}
+返回状态码：200
+响应头：{'Access-Control-Allow-Origin': '', 'Access-Control-Allow-Headers': 'accept,content-type', 'Access-Control-Allow-Methods': 'OPTIONS,GET,POST,DELETE,PUT', 'Access-Control-Allow-Credentials': 'true', 'Content-Type': 'application/json;charset=UTF-8', 'Transfer-Encoding': 'chunked', 'Date': 'Sat, 12 Dec 2020 03:40:35 GMT'}
+响应体：{'status': True, 'message': '发送成功', 'data': None, 'code': 200, 'attributes': None}
+
+===2020-12-11 11:55:46,826 INFO D:\maizi\TestCase\test_cases.py --> 
+用例名称：TC_001:申请云硬盘
+测试步骤：资源预检
+请求URL：POST:http://192.168.101.89:18081/applylist/resourceCheck
+请求头：{'Cookie': 'JSESSIONID=12DBA4368F8556E178DF93BE59CCFE62', 'Content-Length': '40', 'Content-Type': 'application/json'}
+返回状态码：200
+响应头：{'Access-Control-Allow-Origin': '', 'Access-Control-Allow-Headers': 'accept,content-type', 'Access-Control-Allow-Methods': 'OPTIONS,GET,POST,DELETE,PUT', 'Access-Control-Allow-Credentials': 'true', 'Content-Type': 'application/json;charset=UTF-8', 'Transfer-Encoding': 'chunked', 'Date': 'Sat, 12 Dec 2020 03:40:35 GMT'}
+响应体：{'status': True, 'message': '资源预检成功', 'data': True, 'code': 200, 'attributes': None}
+
+===2020-12-11 11:55:46,962 INFO D:\maizi\TestCase\test_cases.py --> 
+用例名称：TC_001:申请云硬盘
+测试步骤：提交订单
+请求URL：POST:http://192.168.101.89:18081/applylist/saveOrder/ACT60jbO/True
+请求头：{'Cookie': 'JSESSIONID=12DBA4368F8556E178DF93BE59CCFE62', 'Content-Length': '40', 'Content-Type': 'application/json'}
+返回状态码：200
+响应头：{'Access-Control-Allow-Origin': '', 'Access-Control-Allow-Headers': 'accept,content-type', 'Access-Control-Allow-Methods': 'OPTIONS,GET,POST,DELETE,PUT', 'Access-Control-Allow-Credentials': 'true', 'Content-Type': 'application/json;charset=UTF-8', 'Transfer-Encoding': 'chunked', 'Date': 'Sat, 12 Dec 2020 03:40:35 GMT'}
+响应体：{'status': True, 'message': '成功保存订单', 'data': None, 'code': 200, 'attributes': None}
+
+===2020-12-11 11:55:46,985 INFO D:\maizi\TestCase\test_cases.py --> 
+用例名称：TC_001:申请云硬盘
+测试步骤：审批下发
+请求URL：POST:http://192.168.101.89:18081/h3c/approve
+请求头：{'Cookie': 'JSESSIONID=12DBA4368F8556E178DF93BE59CCFE62', 'Content-Length': '189', 'Content-Type': 'application/json'}
+返回状态码：200
+响应头：{'Access-Control-Allow-Origin': '', 'Access-Control-Allow-Headers': 'accept,content-type', 'Access-Control-Allow-Methods': 'OPTIONS,GET,POST,DELETE,PUT', 'Access-Control-Allow-Credentials': 'true', 'Content-Type': 'application/json;charset=UTF-8', 'Transfer-Encoding': 'chunked', 'Date': 'Sat, 12 Dec 2020 03:40:35 GMT'}
+响应体：{'status': True, 'message': '资源正在异步下发中...', 'data': None, 'code': 200, 'attributes': None}
+
+===2020-12-11 11:55:46,996 INFO D:\maizi\TestCase\test_cases.py --> 
+用例名称：TC_002:申请云2
+测试步骤：Logout
+请求URL：GET:http://192.168.101.89:18081/login/logout
+请求头：{'Cookie': 'JSESSIONID=12DBA4368F8556E178DF93BE59CCFE62'}
+返回状态码：200
+响应头：{'Access-Control-Allow-Origin': '', 'Access-Control-Allow-Headers': 'accept,content-type', 'Access-Control-Allow-Methods': 'OPTIONS,GET,POST,DELETE,PUT', 'Access-Control-Allow-Credentials': 'true', 'Content-Type': 'application/json;charset=UTF-8', 'Transfer-Encoding': 'chunked', 'Date': 'Sat, 12 Dec 2020 03:40:35 GMT'}
+响应体：{'status': True, 'message': 'logout', 'data': None, 'code': 200, 'attributes': None}
+
+===2020-12-11 16:38:54,034 INFO D:\maizi\TestCase\test_cases.py --> 
+用例名称：TC_001:申请云硬盘
+测试步骤：Login
+请求URL：POST:http://192.168.101.89:18081/login/login
+请求头：{'Content-Length': '41', 'Content-Type': 'application/x-www-form-urlencoded'}
+返回状态码：200
+响应头：{'Access-Control-Allow-Origin': '', 'Access-Control-Allow-Headers': 'accept,content-type', 'Access-Control-Allow-Methods': 'OPTIONS,GET,POST,DELETE,PUT', 'Access-Control-Allow-Credentials': 'true', 'Set-Cookie': 'JSESSIONID=438D9B130A621528F804DF658EEDCF2A; Path=/; HttpOnly', 'Content-Type': 'application/json;charset=UTF-8', 'Transfer-Encoding': 'chunked', 'Date': 'Sat, 12 Dec 2020 08:23:43 GMT'}
+响应体：{'status': True, 'message': None, 'data': {'id': '1df71957d770436493a84f24d9344853', 'groupId': '9052ae85792143ff955c35c52e8e41bd', 'groupName': '中国人民银行清算总中心', 'roleId': 'baae5505-cc96-4cf1-ad5a-a87285af90ae', 'roleName': '云管理员', 'platFormRoleId': 'baae5505-cc96-4cf1-ad5a-a87285af90ae', 'roleLevel': 0, 'roleLevelName': None, 'platformUserId': '1df71957d770436493a84f24d9344853', 'loginName': 'admin', 'userName': '系统管理员', 'password': None, 'pwdInvalidTime': '2020-11-06 10:28:00', 'description': '', 'owner': 'cloudos', 'certification': '', 'email': '', 'telephone': '', 'address': '', 'ipCheck': None, 'macCheck': None, 'otherInfo': '9052ae85792143ff955c35c52e8e41bd,66213f235cb046d091b67976f4726677', 'createDate': '2018-10-18 09:49:25', 'modifiedDate': '2019-11-14 19:02:18', 'logindatetime': '2020-12-12 16:23:43', 'ip': '172.17.72.1', 'digestPassword': '', 'active': True, 'locked': False}, 'code': 200, 'attributes': None}
+
+===2020-12-11 16:38:54,110 INFO D:\maizi\TestCase\test_cases.py --> 
+用例名称：TC_001:申请云硬盘
+测试步骤：云硬盘
+请求URL：POST:http://192.168.101.89:18081/serverApply/volume
+请求头：{'Cookie': 'JSESSIONID=438D9B130A621528F804DF658EEDCF2A', 'Content-Length': '508', 'Content-Type': 'application/json'}
+返回状态码：200
+响应头：{'Access-Control-Allow-Origin': '', 'Access-Control-Allow-Headers': 'accept,content-type', 'Access-Control-Allow-Methods': 'OPTIONS,GET,POST,DELETE,PUT', 'Access-Control-Allow-Credentials': 'true', 'Content-Type': 'application/json;charset=UTF-8', 'Transfer-Encoding': 'chunked', 'Date': 'Sat, 12 Dec 2020 08:23:43 GMT'}
+响应体：{'status': True, 'message': '申请X86硬盘！', 'data': None, 'code': 200, 'attributes': None}
+
+===2020-12-11 16:38:54,151 INFO D:\maizi\TestCase\test_cases.py --> 
+用例名称：TC_001:申请云硬盘
+测试步骤：获取云硬盘资源清单
+请求URL：GET:http://192.168.101.89:18081/applylist/listApplyListsByOperatorId
+请求头：{'Cookie': 'JSESSIONID=438D9B130A621528F804DF658EEDCF2A'}
+返回状态码：200
+响应头：{'Access-Control-Allow-Origin': '', 'Access-Control-Allow-Headers': 'accept,content-type', 'Access-Control-Allow-Methods': 'OPTIONS,GET,POST,DELETE,PUT', 'Access-Control-Allow-Credentials': 'true', 'Content-Type': 'application/json;charset=UTF-8', 'Transfer-Encoding': 'chunked', 'Date': 'Sat, 12 Dec 2020 08:23:43 GMT'}
+响应体：{'status': True, 'message': None, 'data': {'server': {'add': [], 'change': [], 'unsubscribe': []}, 'volume': {'add': [{'applyListId': '2603dcc4-481e-461f-bf74-80bc89765f07', 'resourceContent': '{"applyId":"","volumeId":null,"volumeName":"diskrR6","description":"","volumeNums":1,"volumeIds":null,"serverName":"","serverId":"","normId":"","storageType":"普通","resTenancy":"-1","businessSystemName":"0722测试1","businessSystemId":"f4fead37-27ab-4fe6-b2a7-109335b417c0","azoneId":"495ce550-a285-41eb-9345-26404597da79","azoneLabelName":"v8_cinder","azoneName":"vmware_cinder","hostName":"cpn-v8rc@vmware_volume","volumeSize":100,"newVolumeSize":"100GB","oldVolumeSize":"","shared":false,"changeType":null,"unsubscribeType":null,"serverVirtType":null,"serverHost":null}', 'resourceNumber': 1, 'resourceName': None, 'resourceChangeResult': None, 'softwareSystemId': None, 'softwareSystemName': '0722测试1', 'powerTemplateVMName': None}], 'change': [], 'unsubscribe': []}, 'port': {'add': [], 'change': [], 'unsubscribe': []}, 'baremetal': {'add': [], 'change': [], 'unsubscribe': []}, 'powervm': {'add': [], 'change': [], 'unsubscribe': []}, 'powervolume': {'add': [], 'change': [], 'unsubscribe': []}, 'ecs': {'add': [], 'change': [], 'unsubscribe': []}, 'eip': {'add': [], 'change': [], 'unsubscribe': []}, 'evs': {'add': [], 'change': [], 'unsubscribe': []}}, 'code': 200, 'attributes': None}
+
+===2020-12-11 16:38:54,199 INFO D:\maizi\TestCase\test_cases.py --> 
+用例名称：TC_001:申请云硬盘
+测试步骤：新建maximo工单
+请求URL：POST:http://192.168.101.89:18081/h3c/apply
+请求头：{'Cookie': 'JSESSIONID=438D9B130A621528F804DF658EEDCF2A', 'Content-Length': '753', 'Content-Type': 'application/json'}
+返回状态码：200
+响应头：{'Access-Control-Allow-Origin': '', 'Access-Control-Allow-Headers': 'accept,content-type', 'Access-Control-Allow-Methods': 'OPTIONS,GET,POST,DELETE,PUT', 'Access-Control-Allow-Credentials': 'true', 'Content-Type': 'application/json;charset=UTF-8', 'Transfer-Encoding': 'chunked', 'Date': 'Sat, 12 Dec 2020 08:23:43 GMT'}
+响应体：{'status': True, 'message': '发送成功', 'data': None, 'code': 200, 'attributes': None}
+
+===2020-12-11 16:38:54,265 INFO D:\maizi\TestCase\test_cases.py --> 
+用例名称：TC_001:申请云硬盘
+测试步骤：资源预检
+请求URL：POST:http://192.168.101.89:18081/applylist/resourceCheck
+请求头：{'Cookie': 'JSESSIONID=438D9B130A621528F804DF658EEDCF2A', 'Content-Length': '40', 'Content-Type': 'application/json'}
+返回状态码：200
+响应头：{'Access-Control-Allow-Origin': '', 'Access-Control-Allow-Headers': 'accept,content-type', 'Access-Control-Allow-Methods': 'OPTIONS,GET,POST,DELETE,PUT', 'Access-Control-Allow-Credentials': 'true', 'Content-Type': 'application/json;charset=UTF-8', 'Transfer-Encoding': 'chunked', 'Date': 'Sat, 12 Dec 2020 08:23:43 GMT'}
+响应体：{'status': True, 'message': '资源预检成功', 'data': True, 'code': 200, 'attributes': None}
+
+===2020-12-11 16:38:54,432 INFO D:\maizi\TestCase\test_cases.py --> 
+用例名称：TC_001:申请云硬盘
+测试步骤：提交订单
+请求URL：POST:http://192.168.101.89:18081/applylist/saveOrder/ACTldaxX/True
+请求头：{'Cookie': 'JSESSIONID=438D9B130A621528F804DF658EEDCF2A', 'Content-Length': '40', 'Content-Type': 'application/json'}
+返回状态码：200
+响应头：{'Access-Control-Allow-Origin': '', 'Access-Control-Allow-Headers': 'accept,content-type', 'Access-Control-Allow-Methods': 'OPTIONS,GET,POST,DELETE,PUT', 'Access-Control-Allow-Credentials': 'true', 'Content-Type': 'application/json;charset=UTF-8', 'Transfer-Encoding': 'chunked', 'Date': 'Sat, 12 Dec 2020 08:23:43 GMT'}
+响应体：{'status': True, 'message': '成功保存订单', 'data': None, 'code': 200, 'attributes': None}
+
+===2020-12-11 16:38:54,471 INFO D:\maizi\TestCase\test_cases.py --> 
+用例名称：TC_001:申请云硬盘
+测试步骤：审批下发
+请求URL：POST:http://192.168.101.89:18081/h3c/approve
+请求头：{'Cookie': 'JSESSIONID=438D9B130A621528F804DF658EEDCF2A', 'Content-Length': '189', 'Content-Type': 'application/json'}
+返回状态码：200
+响应头：{'Access-Control-Allow-Origin': '', 'Access-Control-Allow-Headers': 'accept,content-type', 'Access-Control-Allow-Methods': 'OPTIONS,GET,POST,DELETE,PUT', 'Access-Control-Allow-Credentials': 'true', 'Content-Type': 'application/json;charset=UTF-8', 'Transfer-Encoding': 'chunked', 'Date': 'Sat, 12 Dec 2020 08:23:43 GMT'}
+响应体：{'status': True, 'message': '资源正在异步下发中...', 'data': None, 'code': 200, 'attributes': None}
+
+===2020-12-11 16:38:54,477 INFO D:\maizi\TestCase\test_cases.py --> 
+用例名称：TC_002:申请云2
+测试步骤：Logout
+请求URL：GET:http://192.168.101.89:18081/login/logout
+请求头：{'Cookie': 'JSESSIONID=438D9B130A621528F804DF658EEDCF2A'}
+返回状态码：200
+响应头：{'Access-Control-Allow-Origin': '', 'Access-Control-Allow-Headers': 'accept,content-type', 'Access-Control-Allow-Methods': 'OPTIONS,GET,POST,DELETE,PUT', 'Access-Control-Allow-Credentials': 'true', 'Content-Type': 'application/json;charset=UTF-8', 'Transfer-Encoding': 'chunked', 'Date': 'Sat, 12 Dec 2020 08:23:43 GMT'}
+响应体：{'status': True, 'message': 'logout', 'data': None, 'code': 200, 'attributes': None}
+
+===2020-12-11 17:06:22,098 INFO D:\maizi\TestCase\test_cases.py --> 
+用例名称：TC_001:申请云硬盘
+测试步骤：Login
+请求URL：POST:http://192.168.101.89:18081/login/login
+请求头：{'Content-Length': '41', 'Content-Type': 'application/x-www-form-urlencoded'}
+返回状态码：200
+响应头：{'Access-Control-Allow-Origin': '', 'Access-Control-Allow-Headers': 'accept,content-type', 'Access-Control-Allow-Methods': 'OPTIONS,GET,POST,DELETE,PUT', 'Access-Control-Allow-Credentials': 'true', 'Set-Cookie': 'JSESSIONID=F6EFB851C1EAD3544091454E58789FF9; Path=/; HttpOnly', 'Content-Type': 'application/json;charset=UTF-8', 'Transfer-Encoding': 'chunked', 'Date': 'Sat, 12 Dec 2020 08:51:11 GMT'}
+响应体：{'status': True, 'message': None, 'data': {'id': '1df71957d770436493a84f24d9344853', 'groupId': '9052ae85792143ff955c35c52e8e41bd', 'groupName': '中国人民银行清算总中心', 'roleId': 'baae5505-cc96-4cf1-ad5a-a87285af90ae', 'roleName': '云管理员', 'platFormRoleId': 'baae5505-cc96-4cf1-ad5a-a87285af90ae', 'roleLevel': 0, 'roleLevelName': None, 'platformUserId': '1df71957d770436493a84f24d9344853', 'loginName': 'admin', 'userName': '系统管理员', 'password': None, 'pwdInvalidTime': '2020-11-06 10:28:00', 'description': '', 'owner': 'cloudos', 'certification': '', 'email': '', 'telephone': '', 'address': '', 'ipCheck': None, 'macCheck': None, 'otherInfo': '9052ae85792143ff955c35c52e8e41bd,66213f235cb046d091b67976f4726677', 'createDate': '2018-10-18 09:49:25', 'modifiedDate': '2019-11-14 19:02:18', 'logindatetime': '2020-12-12 16:51:11', 'ip': '172.17.72.1', 'digestPassword': '', 'active': True, 'locked': False}, 'code': 200, 'attributes': None}
+
+===2020-12-11 17:06:22,161 INFO D:\maizi\TestCase\test_cases.py --> 
+用例名称：TC_001:申请云硬盘
+测试步骤：云硬盘
+请求URL：POST:http://192.168.101.89:18081/serverApply/volume
+请求头：{'Cookie': 'JSESSIONID=F6EFB851C1EAD3544091454E58789FF9', 'Content-Length': '508', 'Content-Type': 'application/json'}
+返回状态码：200
+响应头：{'Access-Control-Allow-Origin': '', 'Access-Control-Allow-Headers': 'accept,content-type', 'Access-Control-Allow-Methods': 'OPTIONS,GET,POST,DELETE,PUT', 'Access-Control-Allow-Credentials': 'true', 'Content-Type': 'application/json;charset=UTF-8', 'Transfer-Encoding': 'chunked', 'Date': 'Sat, 12 Dec 2020 08:51:11 GMT'}
+响应体：{'status': True, 'message': '申请X86硬盘！', 'data': None, 'code': 200, 'attributes': None}
+
+===2020-12-11 17:06:22,212 INFO D:\maizi\TestCase\test_cases.py --> 
+用例名称：TC_001:申请云硬盘
+测试步骤：获取云硬盘资源清单
+请求URL：GET:http://192.168.101.89:18081/applylist/listApplyListsByOperatorId
+请求头：{'Cookie': 'JSESSIONID=F6EFB851C1EAD3544091454E58789FF9'}
+返回状态码：200
+响应头：{'Access-Control-Allow-Origin': '', 'Access-Control-Allow-Headers': 'accept,content-type', 'Access-Control-Allow-Methods': 'OPTIONS,GET,POST,DELETE,PUT', 'Access-Control-Allow-Credentials': 'true', 'Content-Type': 'application/json;charset=UTF-8', 'Transfer-Encoding': 'chunked', 'Date': 'Sat, 12 Dec 2020 08:51:11 GMT'}
+响应体：{'status': True, 'message': None, 'data': {'server': {'add': [], 'change': [], 'unsubscribe': []}, 'volume': {'add': [{'applyListId': '6ef59aa1-13aa-448f-9801-0cd91bae3a39', 'resourceContent': '{"applyId":"","volumeId":null,"volumeName":"diskVmX","description":"","volumeNums":1,"volumeIds":null,"serverName":"","serverId":"","normId":"","storageType":"普通","resTenancy":"-1","businessSystemName":"0722测试1","businessSystemId":"f4fead37-27ab-4fe6-b2a7-109335b417c0","azoneId":"495ce550-a285-41eb-9345-26404597da79","azoneLabelName":"v8_cinder","azoneName":"vmware_cinder","hostName":"cpn-v8rc@vmware_volume","volumeSize":100,"newVolumeSize":"100GB","oldVolumeSize":"","shared":false,"changeType":null,"unsubscribeType":null,"serverVirtType":null,"serverHost":null}', 'resourceNumber': 1, 'resourceName': None, 'resourceChangeResult': None, 'softwareSystemId': None, 'softwareSystemName': '0722测试1', 'powerTemplateVMName': None}], 'change': [], 'unsubscribe': []}, 'port': {'add': [], 'change': [], 'unsubscribe': []}, 'baremetal': {'add': [], 'change': [], 'unsubscribe': []}, 'powervm': {'add': [], 'change': [], 'unsubscribe': []}, 'powervolume': {'add': [], 'change': [], 'unsubscribe': []}, 'ecs': {'add': [], 'change': [], 'unsubscribe': []}, 'eip': {'add': [], 'change': [], 'unsubscribe': []}, 'evs': {'add': [], 'change': [], 'unsubscribe': []}}, 'code': 200, 'attributes': None}
+
+===2020-12-11 17:06:22,236 INFO D:\maizi\TestCase\test_cases.py --> 
+用例名称：TC_001:申请云硬盘
+测试步骤：新建maximo工单
+请求URL：POST:http://192.168.101.89:18081/h3c/apply
+请求头：{'Cookie': 'JSESSIONID=F6EFB851C1EAD3544091454E58789FF9', 'Content-Length': '753', 'Content-Type': 'application/json'}
+返回状态码：200
+响应头：{'Access-Control-Allow-Origin': '', 'Access-Control-Allow-Headers': 'accept,content-type', 'Access-Control-Allow-Methods': 'OPTIONS,GET,POST,DELETE,PUT', 'Access-Control-Allow-Credentials': 'true', 'Content-Type': 'application/json;charset=UTF-8', 'Transfer-Encoding': 'chunked', 'Date': 'Sat, 12 Dec 2020 08:51:11 GMT'}
+响应体：{'status': True, 'message': '发送成功', 'data': None, 'code': 200, 'attributes': None}
+
+===2020-12-11 17:06:22,306 INFO D:\maizi\TestCase\test_cases.py --> 
+用例名称：TC_001:申请云硬盘
+测试步骤：资源预检
+请求URL：POST:http://192.168.101.89:18081/applylist/resourceCheck
+请求头：{'Cookie': 'JSESSIONID=F6EFB851C1EAD3544091454E58789FF9', 'Content-Length': '40', 'Content-Type': 'application/json'}
+返回状态码：200
+响应头：{'Access-Control-Allow-Origin': '', 'Access-Control-Allow-Headers': 'accept,content-type', 'Access-Control-Allow-Methods': 'OPTIONS,GET,POST,DELETE,PUT', 'Access-Control-Allow-Credentials': 'true', 'Content-Type': 'application/json;charset=UTF-8', 'Transfer-Encoding': 'chunked', 'Date': 'Sat, 12 Dec 2020 08:51:11 GMT'}
+响应体：{'status': True, 'message': '资源预检成功', 'data': True, 'code': 200, 'attributes': None}
+
+===2020-12-11 17:06:22,572 INFO D:\maizi\TestCase\test_cases.py --> 
+用例名称：TC_001:申请云硬盘
+测试步骤：提交订单
+请求URL：POST:http://192.168.101.89:18081/applylist/saveOrder/ACTc611N/True
+请求头：{'Cookie': 'JSESSIONID=F6EFB851C1EAD3544091454E58789FF9', 'Content-Length': '40', 'Content-Type': 'application/json'}
+返回状态码：200
+响应头：{'Access-Control-Allow-Origin': '', 'Access-Control-Allow-Headers': 'accept,content-type', 'Access-Control-Allow-Methods': 'OPTIONS,GET,POST,DELETE,PUT', 'Access-Control-Allow-Credentials': 'true', 'Content-Type': 'application/json;charset=UTF-8', 'Transfer-Encoding': 'chunked', 'Date': 'Sat, 12 Dec 2020 08:51:11 GMT'}
+响应体：{'status': True, 'message': '成功保存订单', 'data': None, 'code': 200, 'attributes': None}
+
+===2020-12-11 17:06:22,593 INFO D:\maizi\TestCase\test_cases.py --> 
+用例名称：TC_001:申请云硬盘
+测试步骤：审批下发
+请求URL：POST:http://192.168.101.89:18081/h3c/approve
+请求头：{'Cookie': 'JSESSIONID=F6EFB851C1EAD3544091454E58789FF9', 'Content-Length': '189', 'Content-Type': 'application/json'}
+返回状态码：200
+响应头：{'Access-Control-Allow-Origin': '', 'Access-Control-Allow-Headers': 'accept,content-type', 'Access-Control-Allow-Methods': 'OPTIONS,GET,POST,DELETE,PUT', 'Access-Control-Allow-Credentials': 'true', 'Content-Type': 'application/json;charset=UTF-8', 'Transfer-Encoding': 'chunked', 'Date': 'Sat, 12 Dec 2020 08:51:11 GMT'}
+响应体：{'status': True, 'message': '资源正在异步下发中...', 'data': None, 'code': 200, 'attributes': None}
+
+===2020-12-11 17:06:22,600 INFO D:\maizi\TestCase\test_cases.py --> 
+用例名称：TC_001:申请云硬盘
+测试步骤：Logout
+请求URL：GET:http://192.168.101.89:18081/login/logout
+请求头：{'Cookie': 'JSESSIONID=F6EFB851C1EAD3544091454E58789FF9'}
+返回状态码：200
+响应头：{'Access-Control-Allow-Origin': '', 'Access-Control-Allow-Headers': 'accept,content-type', 'Access-Control-Allow-Methods': 'OPTIONS,GET,POST,DELETE,PUT', 'Access-Control-Allow-Credentials': 'true', 'Content-Type': 'application/json;charset=UTF-8', 'Transfer-Encoding': 'chunked', 'Date': 'Sat, 12 Dec 2020 08:51:11 GMT'}
+响应体：{'status': True, 'message': 'logout', 'data': None, 'code': 200, 'attributes': None}
+
+===2020-12-11 17:22:59,643 INFO D:\maizi\TestCase\test_cases.py --> 
+用例名称：TC_001:申请云硬盘
+测试步骤：Login
+请求URL：POST:http://192.168.101.89:18081/login/login
+请求头：{'Content-Length': '41', 'Content-Type': 'application/x-www-form-urlencoded'}
+返回状态码：200
+响应头：{'Access-Control-Allow-Origin': '', 'Access-Control-Allow-Headers': 'accept,content-type', 'Access-Control-Allow-Methods': 'OPTIONS,GET,POST,DELETE,PUT', 'Access-Control-Allow-Credentials': 'true', 'Set-Cookie': 'JSESSIONID=277F16C98E0288CDF9BA41BAB1B62CEC; Path=/; HttpOnly', 'Content-Type': 'application/json;charset=UTF-8', 'Transfer-Encoding': 'chunked', 'Date': 'Sat, 12 Dec 2020 09:07:48 GMT'}
+响应体：{'status': True, 'message': None, 'data': {'id': '1df71957d770436493a84f24d9344853', 'groupId': '9052ae85792143ff955c35c52e8e41bd', 'groupName': '中国人民银行清算总中心', 'roleId': 'baae5505-cc96-4cf1-ad5a-a87285af90ae', 'roleName': '云管理员', 'platFormRoleId': 'baae5505-cc96-4cf1-ad5a-a87285af90ae', 'roleLevel': 0, 'roleLevelName': None, 'platformUserId': '1df71957d770436493a84f24d9344853', 'loginName': 'admin', 'userName': '系统管理员', 'password': None, 'pwdInvalidTime': '2020-11-06 10:28:00', 'description': '', 'owner': 'cloudos', 'certification': '', 'email': '', 'telephone': '', 'address': '', 'ipCheck': None, 'macCheck': None, 'otherInfo': '9052ae85792143ff955c35c52e8e41bd,66213f235cb046d091b67976f4726677', 'createDate': '2018-10-18 09:49:25', 'modifiedDate': '2019-11-14 19:02:18', 'logindatetime': '2020-12-12 17:07:48', 'ip': '172.17.72.1', 'digestPassword': '', 'active': True, 'locked': False}, 'code': 200, 'attributes': None}
+
+===2020-12-11 17:22:59,742 INFO D:\maizi\TestCase\test_cases.py --> 
+用例名称：TC_001:申请云硬盘
+测试步骤：云硬盘
+请求URL：POST:http://192.168.101.89:18081/serverApply/volume
+请求头：{'Cookie': 'JSESSIONID=277F16C98E0288CDF9BA41BAB1B62CEC', 'Content-Length': '508', 'Content-Type': 'application/json'}
+返回状态码：200
+响应头：{'Access-Control-Allow-Origin': '', 'Access-Control-Allow-Headers': 'accept,content-type', 'Access-Control-Allow-Methods': 'OPTIONS,GET,POST,DELETE,PUT', 'Access-Control-Allow-Credentials': 'true', 'Content-Type': 'application/json;charset=UTF-8', 'Transfer-Encoding': 'chunked', 'Date': 'Sat, 12 Dec 2020 09:07:48 GMT'}
+响应体：{'status': True, 'message': '申请X86硬盘！', 'data': None, 'code': 200, 'attributes': None}
+
+===2020-12-11 17:22:59,789 INFO D:\maizi\TestCase\test_cases.py --> 
+用例名称：TC_001:申请云硬盘
+测试步骤：获取云硬盘资源清单
+请求URL：GET:http://192.168.101.89:18081/applylist/listApplyListsByOperatorId
+请求头：{'Cookie': 'JSESSIONID=277F16C98E0288CDF9BA41BAB1B62CEC'}
+返回状态码：200
+响应头：{'Access-Control-Allow-Origin': '', 'Access-Control-Allow-Headers': 'accept,content-type', 'Access-Control-Allow-Methods': 'OPTIONS,GET,POST,DELETE,PUT', 'Access-Control-Allow-Credentials': 'true', 'Content-Type': 'application/json;charset=UTF-8', 'Transfer-Encoding': 'chunked', 'Date': 'Sat, 12 Dec 2020 09:07:48 GMT'}
+响应体：{'status': True, 'message': None, 'data': {'server': {'add': [], 'change': [], 'unsubscribe': []}, 'volume': {'add': [{'applyListId': '1bd6e84b-8fad-4313-940a-80df03a07122', 'resourceContent': '{"applyId":"","volumeId":null,"volumeName":"diskWH7","description":"","volumeNums":1,"volumeIds":null,"serverName":"","serverId":"","normId":"","storageType":"普通","resTenancy":"-1","businessSystemName":"0722测试1","businessSystemId":"f4fead37-27ab-4fe6-b2a7-109335b417c0","azoneId":"495ce550-a285-41eb-9345-26404597da79","azoneLabelName":"v8_cinder","azoneName":"vmware_cinder","hostName":"cpn-v8rc@vmware_volume","volumeSize":100,"newVolumeSize":"100GB","oldVolumeSize":"","shared":false,"changeType":null,"unsubscribeType":null,"serverVirtType":null,"serverHost":null}', 'resourceNumber': 1, 'resourceName': None, 'resourceChangeResult': None, 'softwareSystemId': None, 'softwareSystemName': '0722测试1', 'powerTemplateVMName': None}], 'change': [], 'unsubscribe': []}, 'port': {'add': [], 'change': [], 'unsubscribe': []}, 'baremetal': {'add': [], 'change': [], 'unsubscribe': []}, 'powervm': {'add': [], 'change': [], 'unsubscribe': []}, 'powervolume': {'add': [], 'change': [], 'unsubscribe': []}, 'ecs': {'add': [], 'change': [], 'unsubscribe': []}, 'eip': {'add': [], 'change': [], 'unsubscribe': []}, 'evs': {'add': [], 'change': [], 'unsubscribe': []}}, 'code': 200, 'attributes': None}
+
+===2020-12-11 17:22:59,816 INFO D:\maizi\TestCase\test_cases.py --> 
+用例名称：TC_001:申请云硬盘
+测试步骤：新建maximo工单
+请求URL：POST:http://192.168.101.89:18081/h3c/apply
+请求头：{'Cookie': 'JSESSIONID=277F16C98E0288CDF9BA41BAB1B62CEC', 'Content-Length': '753', 'Content-Type': 'application/json'}
+返回状态码：200
+响应头：{'Access-Control-Allow-Origin': '', 'Access-Control-Allow-Headers': 'accept,content-type', 'Access-Control-Allow-Methods': 'OPTIONS,GET,POST,DELETE,PUT', 'Access-Control-Allow-Credentials': 'true', 'Content-Type': 'application/json;charset=UTF-8', 'Transfer-Encoding': 'chunked', 'Date': 'Sat, 12 Dec 2020 09:07:48 GMT'}
+响应体：{'status': True, 'message': '发送成功', 'data': None, 'code': 200, 'attributes': None}
+
+===2020-12-11 17:22:59,882 INFO D:\maizi\TestCase\test_cases.py --> 
+用例名称：TC_001:申请云硬盘
+测试步骤：资源预检
+请求URL：POST:http://192.168.101.89:18081/applylist/resourceCheck
+请求头：{'Cookie': 'JSESSIONID=277F16C98E0288CDF9BA41BAB1B62CEC', 'Content-Length': '40', 'Content-Type': 'application/json'}
+返回状态码：200
+响应头：{'Access-Control-Allow-Origin': '', 'Access-Control-Allow-Headers': 'accept,content-type', 'Access-Control-Allow-Methods': 'OPTIONS,GET,POST,DELETE,PUT', 'Access-Control-Allow-Credentials': 'true', 'Content-Type': 'application/json;charset=UTF-8', 'Transfer-Encoding': 'chunked', 'Date': 'Sat, 12 Dec 2020 09:07:48 GMT'}
+响应体：{'status': True, 'message': '资源预检成功', 'data': True, 'code': 200, 'attributes': None}
+
+===2020-12-11 17:23:00,027 INFO D:\maizi\TestCase\test_cases.py --> 
+用例名称：TC_001:申请云硬盘
+测试步骤：提交订单
+请求URL：POST:http://192.168.101.89:18081/applylist/saveOrder/ACTsQ4A5/True
+请求头：{'Cookie': 'JSESSIONID=277F16C98E0288CDF9BA41BAB1B62CEC', 'Content-Length': '40', 'Content-Type': 'application/json'}
+返回状态码：200
+响应头：{'Access-Control-Allow-Origin': '', 'Access-Control-Allow-Headers': 'accept,content-type', 'Access-Control-Allow-Methods': 'OPTIONS,GET,POST,DELETE,PUT', 'Access-Control-Allow-Credentials': 'true', 'Content-Type': 'application/json;charset=UTF-8', 'Transfer-Encoding': 'chunked', 'Date': 'Sat, 12 Dec 2020 09:07:48 GMT'}
+响应体：{'status': True, 'message': '成功保存订单', 'data': None, 'code': 200, 'attributes': None}
+
+===2020-12-11 17:23:00,054 INFO D:\maizi\TestCase\test_cases.py --> 
+用例名称：TC_001:申请云硬盘
+测试步骤：审批下发
+请求URL：POST:http://192.168.101.89:18081/h3c/approve
+请求头：{'Cookie': 'JSESSIONID=277F16C98E0288CDF9BA41BAB1B62CEC', 'Content-Length': '189', 'Content-Type': 'application/json'}
+返回状态码：200
+响应头：{'Access-Control-Allow-Origin': '', 'Access-Control-Allow-Headers': 'accept,content-type', 'Access-Control-Allow-Methods': 'OPTIONS,GET,POST,DELETE,PUT', 'Access-Control-Allow-Credentials': 'true', 'Content-Type': 'application/json;charset=UTF-8', 'Transfer-Encoding': 'chunked', 'Date': 'Sat, 12 Dec 2020 09:07:48 GMT'}
+响应体：{'status': True, 'message': '资源正在异步下发中...', 'data': None, 'code': 200, 'attributes': None}
+
+===2020-12-11 17:23:00,060 INFO D:\maizi\TestCase\test_cases.py --> 
+用例名称：TC_001:申请云硬盘
+测试步骤：Logout
+请求URL：GET:http://192.168.101.89:18081/login/logout
+请求头：{'Cookie': 'JSESSIONID=277F16C98E0288CDF9BA41BAB1B62CEC'}
+返回状态码：200
+响应头：{'Access-Control-Allow-Origin': '', 'Access-Control-Allow-Headers': 'accept,content-type', 'Access-Control-Allow-Methods': 'OPTIONS,GET,POST,DELETE,PUT', 'Access-Control-Allow-Credentials': 'true', 'Content-Type': 'application/json;charset=UTF-8', 'Transfer-Encoding': 'chunked', 'Date': 'Sat, 12 Dec 2020 09:07:48 GMT'}
+响应体：{'status': True, 'message': 'logout', 'data': None, 'code': 200, 'attributes': None}
+

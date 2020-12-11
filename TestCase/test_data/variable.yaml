@@ -1,0 +1,6 @@
+local_variable:
+  maximo : "'ACT'+randoms(5)"
+  volumeName : "'disk'+randoms(3)"
+  description : "Git版本：,日期： ，版本描述："
+  suite : "TestCase1"
+  excel : "Pbank-portal.xlsx"
