@@ -59,10 +59,7 @@ def logging_level(level):
 
 
 # 日志格式
-fmts = '===%(asctime)s %(levelname)s %(pathname)s --> %(message)s'
-wrapper_fmts = '===%(asctime)s %(levelname)s - %(message)s'
-case_details_fmts = '===%(asctime)s %(levelname)s - %(message)s'
-
+fmts = '===%(asctime)s %(levelname)s-->%(pathname)s:%(message)s'
 # 日志位置
 now = time.strftime("%Y.%m.%d")
 paths = os.path.abspath(os.path.join(os.path.dirname(__file__), ".."))
@@ -70,13 +67,8 @@ info_path = os.path.join(paths, 'log', now + '_info.log')
 error_path = os.path.join(paths, 'log', now + '_error.log')
 
 # 创建通用日志logger，供其他模块调用
-info_log = log_handler("logs", level="INFO", file=info_path, log_format=fmts)
-error_log = log_handler("error_logs", level="ERROR", file=error_path, log_format=fmts)
-
-# 专用日志，给request装饰器使用
-wrapper_log = log_handler("logs", level="INFO", file=info_path, log_format=wrapper_fmts)
-# 专用日志，给测试用例装饰器使用
-case_details_log = log_handler("logs", level="INFO", file=info_path, log_format=case_details_fmts)
+info_log = log_handler("info_log", level="INFO", file=info_path, log_format=format)
+error_log = log_handler("error_log", level="ERROR", file=error_path, log_format=format)
 
 
 if __name__ == '__main__':

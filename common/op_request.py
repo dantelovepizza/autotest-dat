@@ -46,20 +46,4 @@ class My_request:
 
 
 if __name__ == '__main__':
-    # reqs = My_request()
-    # # ';'.join([headers['cookie'], ['='.join(i) for i in r.cookies.items()]])
-    # data = {"applyId": "", "azoneId": "495ce550-a285-41eb-9345-26404597da79", "azoneName": "vmware_cinder",
-    #         "azoneLabelName": "v8_cinder", "hostName": "cpn-v8rc@vmware_volume",
-    #         "businessSystemId": "f4fead37-27ab-4fe6-b2a7-109335b417c0", "businessSystemName": "0722测试1",
-    #         "volumeName": "volumeNam", "description": "", "volumeNums": 1, "serverId": "", "serverName": "",
-    #         "shared": "false", "storageType": "普通", "newVolumeSize": "", "normId": "", "oldVolumeSize": "",
-    #         "resTenancy": "-1", "volumeSize": 100}
-    # r = reqs.run(
-    #     method="Post",
-    #     content_type="json",
-    #     url="http://192.168.101.89:18081/serverApply/volume",
-    #     data=data,
-    #     headers={'Cookie': 'JSESSIONID=063AD7E12599F236FE8F505C7BC7FFF3'}, params=None)
-    #
-    # print(r.request.headers)
     pass

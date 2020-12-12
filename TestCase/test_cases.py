@@ -86,7 +86,7 @@ class Run_TestCase(unittest.TestCase):
                     print(get_session(self.req))
                     session.update(get_session(self.req))
             except AssertionError as e:
-                error_log.error(e)
+                info_log.info("\n{0}->断言结果:{1}".format(items['TC_STEP'], e))
                 raise e
         else:
             error_log.error("Error:未填写断言信息")
