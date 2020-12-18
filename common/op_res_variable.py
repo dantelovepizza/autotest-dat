@@ -1,6 +1,6 @@
 import json
 import re
-from common.op_log import error_log
+from common.op_log import error_log, info_log
 import random
 import string
 from common.op_yaml import var
@@ -12,6 +12,12 @@ def randoms(sub: int):
         return ''.join(random.choices(s, k=sub))
     else:
         raise TypeError("参数类型不正确，请输入有效整数类型")
+
+
+def rand_phone():
+    pefixlist = ["130", "131", "132", "133", "134", "135", "136", "137", "138", "139", "147", "150", "151", "152",
+                 "153", "155", "156", "157", "158", "159", "186", "187", "188"]
+    return random.choice(pefixlist) + "".join(random.choice("0123456789") for i in range(8))
 
 
 # 参数化数据替换
@@ -26,7 +32,7 @@ def data_handle(sub1, sub2, taget, dicts):
     return taget
 
 
-# 递归获取接口返回体中的数据信息，参考格式：['result', 'msg', '-1', 'status']
+# 获取json数据信息，参考格式：['result', 'msg', '-1', 'status']
 def _data_get(dic, locators, default=None):
     """
     :param dic: 输入需要在其中取值的原始字典 <dict>
@@ -86,11 +92,12 @@ def depend_param(locator, response):
 
 
 # 依赖参数化处理：获取响应体中依赖参数，并保存在depend:dict中
-def dependence(items, r, depend:dict):
+def dependence(items, r, depend: dict):
     if items['depend_locator']:
         _locators = json.loads(items['depend_locator'])
         try:
             param = depend_param(_locators, json.loads(r.text))
+            info_log.info(param)
             depend.update(param)
         except Exception as e:
             error_log.error(e)

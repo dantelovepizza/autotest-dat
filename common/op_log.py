@@ -16,7 +16,8 @@ class log_handler(logging.Logger):
                  name,
                  level="INFO",
                  file=None,
-                 log_format=None):
+                 log_format=None,
+                 stream=None):
         super().__init__(name)
         # 设置日志等级
         self.setLevel(level)
@@ -36,13 +37,13 @@ class log_handler(logging.Logger):
             # 设置日志输出格式
             file_handler.setFormatter(fmt)
             self.addHandler(file_handler)
-
-        # 日志输出到控制台
-        ch = logging.StreamHandler()
-        ch.addFilter(filters)
-        ch.setLevel(level)
-        ch.setFormatter(fmt)
-        self.addHandler(ch)
+        if stream:
+            # 日志输出到控制台
+            ch = logging.StreamHandler()
+            ch.addFilter(filters)
+            ch.setLevel(level)
+            ch.setFormatter(fmt)
+            self.addHandler(ch)
 
 
 # 返回日志输出等级:logging.ERROR
@@ -59,17 +60,15 @@ def logging_level(level):
 
 
 # 日志格式
-fmts = '===%(asctime)s %(levelname)s-->%(pathname)s:%(message)s'
+fmts = '"%(asctime)s - %(levelname)s: %(message)s"'
 # 日志位置
 now = time.strftime("%Y.%m.%d")
 paths = os.path.abspath(os.path.join(os.path.dirname(__file__), ".."))
 info_path = os.path.join(paths, 'log', now + '_info.log')
 error_path = os.path.join(paths, 'log', now + '_error.log')
 
+
 # 创建通用日志logger，供其他模块调用
-info_log = log_handler("info_log", level="INFO", file=info_path, log_format=format)
-error_log = log_handler("error_log", level="ERROR", file=error_path, log_format=format)
+info_log = log_handler("info_log", level="INFO", file=info_path, log_format=fmts)
+error_log = log_handler("error_log", level="ERROR", stream=True, file=error_path, log_format=fmts)
 
-
-if __name__ == '__main__':
-    pass

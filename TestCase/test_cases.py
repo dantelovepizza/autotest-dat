@@ -1,10 +1,14 @@
 import json
 import os
+import time
+
+import traceback
 import unittest
 from unittest import SkipTest
 
 import requests
 from ddt import ddt, data
+
 from common.op_res_variable import data_handle, local_variable, dependence
 from common.op_excel import ExcelHandler
 from common.op_request import My_request
@@ -41,6 +45,18 @@ def req_format(req, items):
     return formats
 
 
+# 是否延时
+# 隐式等待/显示等待设计
+def wait(times):
+    try:
+        if times and type(times) is int:
+            time.sleep(times)
+            info_log.info("wait {}s".format(times))
+    except Exception as e:
+        error_log.error("{}".format(traceback.format_exc()))
+        raise e
+
+
 @ddt
 class Run_TestCase(unittest.TestCase):
 
@@ -72,28 +88,27 @@ class Run_TestCase(unittest.TestCase):
             info_log.info(msg=r_formats)
             print(r_formats)
         except Exception as e:
-            error_log.error(e)
+            error_log.error("{0}-{1}请求异常：{2}".format(self._testMethodName, self._testMethodDoc, traceback.format_exc()))
             raise e
         self.assert_case(items, r)
         dependence(items, r, DEPENDENCE)
+        wait(items['sleep'])
 
     def assert_case(self, items, r):
-        if items['except_code'] and items['except_msg']:
-            try:
-                self.assertEqual(r.json()['code'], int(items['except_code']))
-                self.assertIn(items['except_msg'], r.text)
-                if 'Login' in items['TC_STEP']:
-                    print(get_session(self.req))
-                    session.update(get_session(self.req))
-            except AssertionError as e:
-                info_log.info("\n{0}->断言结果:{1}".format(items['TC_STEP'], e))
-                raise e
-        else:
-            error_log.error("Error:未填写断言信息")
+        try:
+            self.assertEqual(r.json()['code'], int(items['except_code']))
+            self.assertIn(items['except_msg'], str(r.text))
+            if 'Login' in items['TC_STEP']:
+                print(get_session(self.req))
+                session.update(get_session(self.req))
+                print(session)
+        except AssertionError as e:
+            error_log.error("{0}-{1}断言失败：{2}".format(self._testMethodName, self._testMethodDoc, traceback.format_exc()))
+            raise e
 
     def data_check(self, items):
         # 是否跳过执行
-        if items['skip'] is not None:
+        if items['skip']:
             raise SkipTest("跳过此步骤:{}".format(str(items['skip'])))
         # 检查Url中是否包含路径参数：items['url']是否包含{param}字段。如果有，则在dependence字典中查找依赖字典
         if items['url'] is None:
@@ -117,10 +132,20 @@ class Run_TestCase(unittest.TestCase):
 
         # data参数：目前有{key:values},[values],参数化使用&param&替换。
         if items['data']:
-            if "&" in items['data']:
-                self.requests_data = eval(data_handle("&", "&", items['data'], DEPENDENCE))
-            else:
-                self.requests_data = eval(items['data'])
+            try:
+                if "&" in items['data']:
+                    self.requests_data = eval(data_handle("&", "&", items['data'], DEPENDENCE))
+                else:
+                    self.requests_data = eval(items['data'])
+            except Exception as e:
+                error_log.error(
+                    "{0}-{1} 请求参数异常\n：{2}".format(self._testMethodName, self._testMethodDoc, traceback.format_exc()))
+                raise e
+        if items['except_code'] and items['except_msg']:
+            if '&' in items['except_msg']:
+                items['except_msg'] = data_handle("&", "&", items['except_msg'], DEPENDENCE)
+        else:
+            error_log.error("Error:断言信息不能为空")
 
 
 if __name__ == '__main__':

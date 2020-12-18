@@ -1,6 +1,7 @@
 import logging
 import os
 import time
+import traceback
 import unittest
 from HTMLTestRunner import HTMLTestRunner
 from common.op_yaml import conf
@@ -13,11 +14,11 @@ description = conf["description"]
 now = time.strftime(r'%Y.%m.%d %H-%M-%S')
 report_dir = os.path.join(os.getcwd(), r'report', now + '.html')
 cases_path = os.path.join(os.getcwd(), r'TestCase')
-run_log = os.path.join(os.getcwd(), r'log')
 
 # 测试用例集
 discover = unittest.defaultTestLoader.discover(
-    cases_path, pattern='test*.py')
+    cases_path, pattern='test_cases.py')
+
 
 if __name__ == '__main__':
     fp = open(report_dir, 'wb')

@@ -1,6 +1,6 @@
 import time
 from functools import *
-from common.op_log import wrapper_log
+from common.op_log import info_log
 
 
 # 将request请求详情发送到info日志
@@ -18,7 +18,7 @@ def request_log(func):
                   "响应头：{5}\n" \
                   "响应体：{2}\n" \
             .format(r.headers, r.status_code, r.json(), r.url, t, r.request.headers)
-        wrapper_log.info(msg=formats)
+        info_log.info(msg=formats)
         return func(*args, **kwargs)
     return wrapper
 
