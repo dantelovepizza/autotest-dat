@@ -29,14 +29,25 @@ class My_request:
 
         # 根据EXCEL的datatype字段选择post参数类型form/json
 
-    def run(self, method, url, content_type=None, params=None, data=None,
-            headers=None, **kwargs):
+    # def run(self, method, url, content_type=None, params=None, data=None,
+    #         headers=None, **kwargs):
+    #     if content_type is None:
+    #         return self.session.request(method, url, params=params, headers=headers, **kwargs)
+    #     if method.lower() == 'post' and content_type == 'json':
+    #         return self.session.request(method, url, params=params, json=data, headers=headers, **kwargs)
+    #     if method.lower() == 'post' and content_type.lower() == 'form':
+    #         return self.session.request(method, url, params=params, data=data, headers=headers, **kwargs)
+    #     if method.lower() == 'put' and content_type == 'json':
+    #         return self.session.request(method, url, json=data, headers=headers, **kwargs)
+    #     if method.lower() == 'put' and content_type == 'data':
+    #         return self.session.request(method, url, data=data, headers=headers, **kwargs)
+    def run(self, method, url, content_type=None, params=None, payload=None,headers=None, **kwargs):
         if content_type is None:
             return self.session.request(method, url, params=params, headers=headers, **kwargs)
-        if method.lower() == 'post' and content_type == 'json':
-            return self.session.request(method, url, params=params, json=data, headers=headers, **kwargs)
-        if method.lower() == 'post' and content_type.lower() == 'form':
-            return self.session.request(method, url, params=params, data=data, headers=headers, **kwargs)
+        if content_type == 'json':
+            return self.session.request(method, url, params=params, json=payload, headers=headers, **kwargs)
+        if content_type == 'form':
+            return self.session.request(method, url, params=params, data=payload, headers=headers, **kwargs)
 
     def cookies(self):
         return requests.utils.dict_from_cookiejar(self.session.cookies)

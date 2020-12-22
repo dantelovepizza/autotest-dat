@@ -82,7 +82,7 @@ class Run_TestCase(unittest.TestCase):
                 method=items['method'],
                 content_type=items['content_type'],
                 url=base_url + self.path_url,
-                data=self.requests_data,
+                payload=self.requests_data,
                 headers=self.header, params=self.params)
             r_formats = req_format(r, items)
             info_log.info(msg=r_formats)
