@@ -29,14 +29,14 @@ class My_request:
 
         # 根据EXCEL的datatype字段选择post参数类型form/json
 
-    def run(self, method, url, content_type=None, params=None, data=None,
+    def run(self, method, url, content_type=None, params=None, payload=None,
             headers=None, **kwargs):
         if content_type is None:
             return self.session.request(method, url, params=params, headers=headers, **kwargs)
-        if method.lower() == 'post' and content_type == 'json':
-            return self.session.request(method, url, params=params, json=data, headers=headers, **kwargs)
-        if method.lower() == 'post' and content_type.lower() == 'form':
-            return self.session.request(method, url, params=params, data=data, headers=headers, **kwargs)
+        if content_type == 'json':
+            return self.session.request(method, url, params=params, json=payload, headers=headers, **kwargs)
+        if content_type == 'form':
+            return self.session.request(method, url, params=params, data=payload, headers=headers, **kwargs)
 
     def cookies(self):
         return requests.utils.dict_from_cookiejar(self.session.cookies)
@@ -46,28 +46,4 @@ class My_request:
 
 
 if __name__ == '__main__':
-    data = {
-    "loginName":"maizi003",
-    "password":"YTEzODQzODE5NDM4IQ==",
-    "retypePassword":"YTEzODQzODE5NDM4IQ==",
-    "userName":"maizi003",
-    "gxNumber":"maizi003",
-    "email":"maizi003@qq.com",
-    "telephone":"13843813333",
-    "idType":999,
-    "certification":"maizi003",
-    "address":"maizi003地址",
-    "group1":"1",
-    "group":{
-        "4":"4",
-        "5":"fed291e9843b11eaa5ae0a580af000fb"
-    },
-    "appIds":[
-        "73f3c49a84c34d7eae1138b5555252a7"
-    ],
-    "reason":"自动测试"
-}
-    mq = My_request()
-    r = mq.run("post", "http://hxdmc.cn/register/user", content_type='json', data=data)
-    print(r.text)
-    print(r.status_code)
+   pass
