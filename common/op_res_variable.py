@@ -3,6 +3,8 @@ import re
 from common.op_log import error_log, info_log
 import random
 import string
+
+from common.op_request import My_request
 from common.op_yaml import var
 
 
@@ -63,7 +65,26 @@ def _data_get(dic, locators, default=None):
             except IndexError:
                 return default
             continue
+        if isinstance(value, list) and '[' in locator:
+            try:
+                i = list_locator(value, locator)
+                value = value[i]
+            except IndexError:
+                return default
+            continue
     return value
+
+
+def list_locator(ls, locator):
+    mark = r'[{0}](.*?)[{1}]'.format(r"[", r"=")
+    mark2 = r'[{0}](.*?)[{1}]'.format(r"=", r"]")
+    x = re.compile(mark)
+    k = x.findall(locator)[0]
+    x1 = re.compile(mark2)
+    v = x1.findall(locator)[0]
+    for i in range(len(ls)):
+        if v in ls[i][k]:
+            return i
 
 
 def _can_convert_to_int(inputs):
@@ -93,8 +114,8 @@ def depend_param(locator, response):
 
 # 依赖参数化处理：获取响应体中依赖参数，并保存在depend:dict中
 def dependence(items, r, depend: dict):
-    if items['depend_locator']:
-        _locators = json.loads(items['depend_locator'])
+    if items:
+        _locators = json.loads(items)
         try:
             param = depend_param(_locators, json.loads(r.text))
             info_log.info(param)
@@ -116,3 +137,13 @@ def local_variable(var_data: dict):
 
 if __name__ == '__main__':
     pass
+    # locator = {"applyListId": "data/volume/add/[resourceContent=sdf]/applyListId"}
+    # data = '["7371404dd4f541a4a02b3eab356f955d"]'
+    # header = {"Cookie": "JSESSIONID=CD82E741C4257CA5B2A01F86E215B5B9"}
+    # mq = My_request()
+    # r = mq.run("GET", "http://192.168.101.89:18081/applylist/listApplyListsByOperatorId",
+    #            headers=header)
+    # dicts = r.json()
+    # print(dicts)
+    #
+    # print(depend_param(locator, dicts))

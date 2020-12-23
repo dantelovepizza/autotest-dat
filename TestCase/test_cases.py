@@ -82,7 +82,7 @@ class Run_TestCase(unittest.TestCase):
                 method=items['method'],
                 content_type=items['content_type'],
                 url=base_url + self.path_url,
-                data=self.requests_data,
+                payload=self.requests_data,
                 headers=self.header, params=self.params)
             r_formats = req_format(r, items)
             info_log.info(msg=r_formats)
@@ -91,7 +91,7 @@ class Run_TestCase(unittest.TestCase):
             error_log.error("{0}-{1}请求异常：{2}".format(self._testMethodName, self._testMethodDoc, traceback.format_exc()))
             raise e
         self.assert_case(items, r)
-        dependence(items, r, DEPENDENCE)
+        dependence(items['depend_locator'], r, DEPENDENCE)
         wait(items['sleep'])
 
     def assert_case(self, items, r):
