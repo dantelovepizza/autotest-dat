@@ -37,11 +37,12 @@ def req_format(req, items):
               "测试步骤：{7}\n" \
               "请求URL：{5}:{3}\n" \
               "请求头：{4}\n" \
+              "请求体：{8}\n" \
               "返回状态码：{1}\n" \
               "响应头：{0}\n" \
               "响应体：{2}\n" \
         .format(req.headers, req.status_code, req.json(), req.url, req.request.headers, req.request.method,
-                items['TC_Cases'], items['TC_STEP'])
+                items['TC_Cases'], items['TC_STEP'], req.request.body)
     return formats
 
 
