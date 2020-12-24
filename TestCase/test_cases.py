@@ -148,6 +148,9 @@ class Run_TestCase(unittest.TestCase):
         else:
             error_log.error("Error:断言信息不能为空")
 
+        if items['depend_locator'] and '&' in items['depend_locator']:
+            items['depend_locator'] = data_handle("&", "&", items['depend_locator'], DEPENDENCE)
+
 
 if __name__ == '__main__':
     unittest.main()
