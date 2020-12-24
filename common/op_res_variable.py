@@ -1,10 +1,12 @@
 import json
 import re
+import traceback
+
 from common.op_log import error_log, info_log
 import random
 import string
 
-from common.op_request import My_request
+
 from common.op_yaml import var
 
 
@@ -51,26 +53,26 @@ def _data_get(dic, locators, default=None):
             try:
                 value = dic[locator]
             except KeyError:
-                return default
+                error_log.error(traceback.format_exc())
             continue
         if isinstance(value, dict):
             try:
                 value = _data_get(value, [locator])
             except KeyError:
-                return default
+                error_log.error(traceback.format_exc())
             continue
         if isinstance(value, list) and _can_convert_to_int(locator):
             try:
                 value = value[int(locator)]
-            except IndexError:
-                return default
+            except Exception:
+                error_log.error(traceback.format_exc())
             continue
         if isinstance(value, list) and '[' in locator:
             try:
                 i = list_locator(value, locator)
                 value = value[i]
-            except IndexError:
-                return default
+            except Exception:
+                error_log.error(traceback.format_exc())
             continue
     return value
 
@@ -83,11 +85,9 @@ def list_locator(ls, locator):
     x1 = re.compile(mark2)
     v = x1.findall(locator)[0]
     for i in range(len(ls)):
-        if isinstance(ls[i][k], str) and v in ls[i][k]:
+        if v in str(ls[i][k]):
             return i
-        elif eval(v) == ls[i][k]:
-            return i
-    raise TypeError("定位参数不正确")
+    error_log.error(traceback.format_exc())
 
 
 def _can_convert_to_int(inputs):
@@ -139,14 +139,6 @@ def local_variable(var_data: dict):
 
 
 if __name__ == '__main__':
-    DEPENDENCE = {}
-    s = '{"applyListId": "data/evs/add/[resourceContent=evsUPN]/applyListId"}'
-    header = {"Cookie": "JSESSIONID=D22D26B170E896E743630DB47A6797DC"}
-    from common.op_request import My_request
+    pass
 
-    req = My_request()
-    r = req.run("get", "http://192.168.101.89:18081/applylist/listApplyListsByOperatorId", headers=header)
-    d = r.text
-    dependence(s, r, DEPENDENCE)
-    print(DEPENDENCE)
 
