@@ -83,7 +83,7 @@ def list_locator(ls, locator):
     x1 = re.compile(mark2)
     v = x1.findall(locator)[0]
     for i in range(len(ls)):
-        if callable(ls[i][k]) and v in ls[i][k]:
+        if isinstance(ls[i][k], str) and v in ls[i][k]:
             return i
         elif eval(v) == ls[i][k]:
             return i
@@ -139,13 +139,14 @@ def local_variable(var_data: dict):
 
 
 if __name__ == '__main__':
-    pass
-    # locator = {"applyListId": "data/volume/add/[resourceNumber=4]/applyListId"}
-    # data = '["7371404dd4f541a4a02b3eab356f955d"]'
-    # header = {"Cookie": "JSESSIONID=CD82E741C4257CA5B2A01F86E215B5B9"}
-    # mq = My_request()
-    # r = mq.run("GET", "http://192.168.101.89:18081/applylist/listApplyListsByOperatorId",
-    #            headers=header)
-    # dicts = r.json()
-    #
-    # print(depend_param(locator, dicts))
+    DEPENDENCE = {}
+    s = '{"applyListId": "data/evs/add/[resourceContent=evsUPN]/applyListId"}'
+    header = {"Cookie": "JSESSIONID=D22D26B170E896E743630DB47A6797DC"}
+    from common.op_request import My_request
+
+    req = My_request()
+    r = req.run("get", "http://192.168.101.89:18081/applylist/listApplyListsByOperatorId", headers=header)
+    d = r.text
+    dependence(s, r, DEPENDENCE)
+    print(DEPENDENCE)
+
