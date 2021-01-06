@@ -38,7 +38,7 @@ config = os.path.abspath(os.path.join(os.path.dirname(__file__), "../Config/conf
 conf = yaml_handler(config).read_yaml()["conf"]
 mysql = yaml_handler(config).read_yaml()["mysql"]
 
-variable = os.path.abspath(os.path.join(os.path.dirname(__file__), "../TestCase/test_data/variable.yaml"))
+variable = os.path.abspath(os.path.join(os.path.dirname(__file__), "../TestCase/test_data/{0}".format(conf['variable'])))
 var = yaml_handler(variable).read_yaml()["local_variable"]
 
 if __name__ == '__main__':

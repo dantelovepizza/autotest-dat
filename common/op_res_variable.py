@@ -6,7 +6,6 @@ from common.op_log import error_log, info_log
 import random
 import string
 
-
 from common.op_yaml import var
 
 
@@ -77,17 +76,21 @@ def _data_get(dic, locators, default=None):
     return value
 
 
+# 通过[key=value]定位响应体list中的顺序值
 def list_locator(ls, locator):
-    mark = r'[{0}](.*?)[{1}]'.format(r"[", r"=")
-    mark2 = r'[{0}](.*?)[{1}]'.format(r"=", r"]")
-    x = re.compile(mark)
-    k = x.findall(locator)[0]
-    x1 = re.compile(mark2)
-    v = x1.findall(locator)[0]
-    for i in range(len(ls)):
-        if v in str(ls[i][k]):
-            return i
-    error_log.error(traceback.format_exc())
+    s = (r"[", r"=", r"]")
+    k = []
+    for c in range(2):
+        mark = r'[{0}](.*?)[{1}]'.format(s[c], s[c + 1])
+        x = re.compile(mark)
+        k.append(x.findall(locator)[0])
+    try:
+        for i in range(len(ls)):
+            if k[1] in str(ls[i][k[0]]):
+                return i
+    except Exception:
+        error_log.error(traceback.format_exc())
+    raise KeyError("定位器参数{0}在{1}不存在！".format(ls, locator))
 
 
 def _can_convert_to_int(inputs):
@@ -140,5 +143,3 @@ def local_variable(var_data: dict):
 
 if __name__ == '__main__':
     pass
-
-

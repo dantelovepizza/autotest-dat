@@ -1,6 +1,7 @@
 import requests
 from requests.adapters import HTTPAdapter
-from common.op_warper import request_log
+
+from common.op_res_variable import *
 
 """
 重写request要解决的问题：
@@ -46,4 +47,11 @@ class My_request:
 
 
 if __name__ == '__main__':
-   pass
+    # s = {"username":"admin","password":"da0dfc69961c482dbb1c453917a8066b"}
+    # req = My_request()
+    # # header = {'Cookie': 'JSESSIONID=669929C0B6EA1E34E89D01BD24BEAD23', 'Content-Length': '0'}
+    # r = req.run("post", "http://hxdmc.cn/cas/v1/tickets", content_type='form', payload=s)
+    # # print(type((r.json()["data"]['evs']['change'][0])))
+    # r1 = req.run("get","http://hxdmc.cn?ticket=ST-54-VKt7npsoorFgdu5joIh2K4BpAPo-hxyy-cas-serverrc-4jcqt",)
+    # print(r1.request.headers)
+    pass

@@ -60,7 +60,7 @@ def logging_level(level):
 
 
 # 日志格式
-fmts = '"%(asctime)s - %(levelname)s: %(message)s"'
+fmts = '"%(asctime)s -%(filename)s-%(funcName)s %(lineno)d %(levelname)s: %(message)s"'
 # 日志位置
 now = time.strftime("%Y.%m.%d")
 paths = os.path.abspath(os.path.join(os.path.dirname(__file__), ".."))

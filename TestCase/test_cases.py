@@ -1,14 +1,12 @@
 import json
 import os
 import time
-
 import traceback
 import unittest
 from unittest import SkipTest
-
 import requests
 from ddt import ddt, data
-
+from TestCase.case_suite import *
 from common.op_res_variable import data_handle, local_variable, dependence
 from common.op_excel import ExcelHandler
 from common.op_request import My_request
@@ -20,10 +18,12 @@ session = {}
 # 获取测试数据，数据格式:[{'no': 1, 'module': '登录'},{'no': 2, 'module': '登录2'}]
 # 读取yaml配置文件，获取excel的sheet名称
 # 读取yaml配置文件，查找待运行的EXCEL
-sheets, file, base_url = conf['suite'], conf['excel'], conf['base_url']
+sheets, file, base_url = conf['test_suite'], conf['excel'], conf['base_url']
 
 path = os.path.abspath(os.path.join(os.path.dirname(__file__), "../TestCase/test_data/{0}".format(file)))
-cases = ExcelHandler(path).read_excel(sheets)
+cell_cases = ExcelHandler(path).read_excel(sheets)
+case_level = catch_level(conf['case_level'])
+cases = verify_cases(case_level, cell_cases)
 
 
 def get_session(req):
@@ -50,9 +50,9 @@ def req_format(req, items):
 # 隐式等待/显示等待设计
 def wait(times):
     try:
-        if times and type(times) is int:
+        if isinstance(times, int):
             time.sleep(times)
-            info_log.info("wait {}s".format(times))
+            info_log.info("{0}等待{1}s{2}".format('-'*20, times, '-'*20))
     except Exception as e:
         error_log.error("{}".format(traceback.format_exc()))
         raise e

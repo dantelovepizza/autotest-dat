@@ -1,9 +1,11 @@
 conf:
   base_url : "http://192.168.101.89:18081"
   target : "人行CNCC云管平台"
-  description : "Git版本：,日期： ，版本描述："
-  suite : "TestCase1,TestCase2,TestCase3"
-  excel : "Pbank-portal.xlsx"
+  description : "Git版本：,日期： ,版本描述："
+  test_suite : "TestCase1"
+  excel : "Pbank-portal_wzy.xlsx"
+  variable : 'variable.yaml'
+  case_level: 'P1'
 
 mysql :
   host : '192.168.101.89'
